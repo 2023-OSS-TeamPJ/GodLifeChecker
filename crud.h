@@ -3,20 +3,20 @@
 typedef struct{
     int exerciseTime;
     int majorStudy;
-    int minorStudy;
+    int otherStudy;
     int sleepTime;
-    int eatingCount;
+    int mealCount;
     int readingTime;
-    int friendshipTimme;
+    int friendshipTime;
 }standard;
 
 typedef struct{
-    int dailycount;
+    int day;
     int exerciseTime;
     int majorStudy;
-    int minorStudy;
+    int otherStudy;
     int sleepTime;
-    int eatingCount;
+    int mealCount;
     int readingTime;
-    int friendshipTimme;
+    int friendshipTime;
 }daily;

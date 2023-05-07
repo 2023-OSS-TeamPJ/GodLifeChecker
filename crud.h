@@ -1,4 +1,3 @@
-#include <stdio.h>
 
 typedef struct{
     int exerciseTime;
@@ -19,4 +18,12 @@ typedef struct{
     int mealCount;
     int readingTime;
     int friendshipTime;
+    double godchecker;
 }daily;
+
+
+
+void standardChecker(standard *s);
+void saveData(standard *s,daily *d[]  ,int count);
+int loadData(standard *s, daily *d[]);
+int menu();

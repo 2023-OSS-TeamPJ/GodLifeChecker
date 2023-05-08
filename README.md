@@ -12,8 +12,7 @@
 해당 날짜의 시간 할당량을 입력받고 카테고리별로 평가하여 
 사용자가 시간을 얼마나 진취적으로 사용하였는지에 대한 지표를 제공하는 프로그램입니다 
 #### 개발환경 및 언어
-C : Visual Studio Code, Linux, Shell
-Markdown
+C : Visual Studio Code, Linux, Shell, Markdown
 #### 팀소개 및 팀원이 맡은 역할
 이다빈 : 한동대학교 20학번 컴퓨터공학, 전자공학 전공이며 CRUD의 스켈레톤을 구성하는 역할
 

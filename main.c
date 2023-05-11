@@ -44,7 +44,7 @@ int main(void) {
         }
         else if (menuNum = 7) {
             //주별 갓생 평가
-            calculatorWeek(myStandard, myDaily);
+            calculatorWeek(myStandard);
         }
         else if (menuNum = 8) {
             //데이터 저장

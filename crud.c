@@ -26,7 +26,7 @@ int menu(){
     printf("5. 원하는 날짜의 갓생을 확인해보자!");
     printf("6. 일일날짜의 ");
 
-    //return select;
+    return select;
 }
 void saveData(standard *s,daily *d[]  ,int count){
     int i = 0 ;

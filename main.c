@@ -3,11 +3,28 @@
 #include "evaluate.h"
 
 
+/*
+    printf("1. 나의 갓생 기준 설정/수정");
+    printf("2. 오늘 얼마나 하셨나요?");
+    printf("3. 원하는 요일의 갓생데이터를 삭제!");
+    printf("4. 원하는 날짜의 갓생데이터를 수정해 보자!");
+    printf("5. 원하는 날짜의 갓생을 확인해보자!");
+    printf("6. 일일날짜의 ");
+    */
 
 int main(void) {
-    int menu; //사용자가 선택한 메뉴번호
+    int menuNum; //사용자가 선택한 메뉴번호
+    standard *myStandard;
 
     while(1) {
-        
+        menuNum = menu();
+        if (menuNum = 1) {
+            //기준
+            standardChecker(myStandard);
+        }
+
+        if (menuNum = 2) {
+            //일일 데이터 입력
+        }
     }
 }

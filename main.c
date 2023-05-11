@@ -19,12 +19,39 @@ int main(void) {
     while(1) {
         menuNum = menu();
         if (menuNum = 1) {
-            //기준
+            //갓생 기준 설정/수정하기
             standardChecker(myStandard);
         }
 
-        if (menuNum = 2) {
+        else if (menuNum = 2) {
             //일일 데이터 입력
         }
+    
+        else if (menuNum = 3) {
+            //일일 데이터 삭제
+        }
+        else if (menuNum = 4) {
+            //일일 데이터 수정
+        }
+        else if (menuNum = 5) {
+            //일일 데이터 출력
+        }
+        else if (menuNum = 6) {
+            //일별 갓생 평가
+        }
+        else if (menuNum = 7) {
+            //주별 갓생 평가
+        }
+        else if (menuNum = 8) {
+            //데이터 저장
+        }
+        else if (menuNum = 9) {
+            //나가기
+        }
+        else {
+            //잘못된 입력 
+            printf("잘못된 메뉴번호입니다\n");
+        }
+
     }
 }

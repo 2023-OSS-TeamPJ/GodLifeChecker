@@ -3,17 +3,10 @@
 #include "evaluate.h"
 
 
-/*
-    printf("1. 나의 갓생 기준 설정/수정");
-    printf("2. 오늘 얼마나 하셨나요?");
-    printf("3. 원하는 요일의 갓생데이터를 삭제!");
-    printf("4. 원하는 날짜의 갓생데이터를 수정해 보자!");
-    printf("5. 원하는 날짜의 갓생을 확인해보자!");
-    printf("6. 일일날짜의 ");
-    */
 
 int main(void) {
     int menuNum; //사용자가 선택한 메뉴번호
+    int count; //입력 되어있는 데이터의 개수
 
     standard *myStandard = (standard*)malloc(sizeof(standard));
     daily *myDaily[28] = (daily*)malloc(sizeof(daily)*28);
@@ -48,6 +41,7 @@ int main(void) {
         }
         else if (menuNum = 8) {
             //데이터 저장
+            saveData(myStandard, myDaily, count);
         }
         else if (menuNum = 9) {
             //나가기

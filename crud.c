@@ -28,7 +28,7 @@ int menu(){
 
     return select;
 }
-void saveData(standard *s,daily *d[]  ,int count){
+void saveData(standard *s, daily *d[], int count){
     int i = 0 ;
     FILE *fp;
     fp = fopen("standardText.txt", "wt");

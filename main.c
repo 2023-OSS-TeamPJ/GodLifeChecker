@@ -14,7 +14,9 @@
 
 int main(void) {
     int menuNum; //사용자가 선택한 메뉴번호
-    standard *myStandard;
+
+    standard *myStandard = (standard*)malloc(sizeof(standard));
+    daily *myDaily[28] = (daily*)malloc(sizeof(daily)*28);
 
     while(1) {
         menuNum = menu();
@@ -38,9 +40,11 @@ int main(void) {
         }
         else if (menuNum = 6) {
             //일별 갓생 평가
+            calculatorDaily(myStandard, myDaily);
         }
         else if (menuNum = 7) {
             //주별 갓생 평가
+            calculatorWeek(myStandard, myDaily);
         }
         else if (menuNum = 8) {
             //데이터 저장

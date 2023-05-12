@@ -33,6 +33,7 @@ int menu(){
     scanf("원하는 메뉴는? =>%d",&select);
     return select;
 }
+
 void saveData(standard *s, daily *d[], int count){
     int i = 0 ;
     FILE *fp;

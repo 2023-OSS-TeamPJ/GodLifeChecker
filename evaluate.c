@@ -33,14 +33,16 @@ void conformDaily(standard *s, daily *d){
 void calculatorWeek(daily *d[]){
     double everage;
     int limit;
-    if(sizeof(d)/sizeof(daily*)<7)limit = sizeof(d)/sizeof(daily*);
-    7이하의 데이터 충분한 데이터가 모이지 않았습니다., 
-    7>몇주차 = 2
+    if(sizeof(d)/sizeof(daily*)<7){
+        printf("7이하의 데이터 충분한 데이터가 모이지 않았습니다."); 
+        return;
+    }
+    /*7>몇주차 = 2
     int start = (j-1)*7 
     int w[7];
     for(int i = 0 ; i < 7 ; i++){
         w[i] = d[start+i];
-    }
+    }*/
 
     everage = everage/limit;
     if(everage>=4.5){

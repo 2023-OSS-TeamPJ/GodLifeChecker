@@ -9,10 +9,10 @@ void calculatorDaily(standard *s, daily *d){
     double sum;
     evaluate[0]=d->exerciseTime/s->exerciseTime*100;
     evaluate[1]=d->majorStudy/s->majorStudy*100;
-    evaluate[2]=d->minorStudy/s->minorStudy*100;
+    evaluate[2]=d->otherStudy/s->otherStudy*100;
     evaluate[3]=d->sleepTime/s->sleepTime*100;
     evaluate[4]=d->readingTime/s->readingTime*100;
-    evaluate[5]=d->eatingCount/s->eatingCount*100;
+    evaluate[5]=d->mealCount/s->mealCount*100;
     evaluate[6]=d->friendshipTime/s->friendshipTime*100;
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) error=1;

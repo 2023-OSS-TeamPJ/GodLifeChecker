@@ -104,3 +104,14 @@ void addDailyData(standard *s, daily *d[], int count) {
     scanf("%d",&d[count]->friendshipTime);
 }
 
+int deleteDailyData(daily *d[], int count) {
+    int choice;
+    printf("정말로 삭제하시겠습니까?(삭제 :1)");
+    scanf("%d", &choice);
+    if (choice != 1) return 0;
+    //데이터 전체삭제
+    for (int i=count; i>=0; i--) {
+        free(d[i]);
+    }
+    return 1;
+}

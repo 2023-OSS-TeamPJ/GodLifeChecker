@@ -5,6 +5,7 @@
 
 void calculatorDaily(standard *s, daily *d){
     double evaluate[7];
+    int error=0;
     double sum;
     evaluate[0]=d->exerciseTime/s->exerciseTime*100;
     evaluate[1]=d->majorStudy/s->majorStudy*100;
@@ -14,27 +15,39 @@ void calculatorDaily(standard *s, daily *d){
     evaluate[5]=d->eatingCount/s->eatingCount*100;
     evaluate[6]=d->friendshipTime/s->friendshipTime*100;
     for(int i = 0 ; i < 7 ; i ++){
+        if(evaluate[i]<50) error=1;
         sum+=evaluate[i];
     }
-    sum = sum/7;
-    d->godchecker=sum;
-    if(sum>=120){
-        printf("초 갓생이군요!!!");
-        return;
-    }
-    if(sum>=100){
-        printf("갓생이네요!");
-        return;
-    }
-    if(sum>=80){
-        printf("범생이시군요.");
-        return;
-    }
-    if(80>sum){
-        printf("미생입니다.");
+    double average = sum/7;
+
+    if(error==0){
+        if(average>=120){
+            printf("초 갓생이군요!!!");
+            d->godChecker=5;
+            return;
+        }
+        if(average>=100){
+            printf("갓생이네요!");
+            d->godChecker=4;
+            return;
+        }
+        if(average>=80){
+            printf("범생이시군요.");
+            d->godChecker=3;
+            return;
+        }
+        if(80>average){
+            printf("미생입니다.");
+            d->godChecker=0;
+            return;
+        }
+    }else{
+        printf("미생입니다 (불균형한 삶 입니다.)");
+        d->godChecker=0;
         return;
     }
 }
+
 void calculatorWeek(daily *d[]){
     double everage;
     int limit;

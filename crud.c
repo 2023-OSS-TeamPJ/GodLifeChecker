@@ -201,7 +201,7 @@ void showDailyData(daily *d[], int count) {
     //취소할 경우 -> 나가기
     if (searchNum== 0) {
         for(int i=0; i<count; i++) {
-            printf("%d 일차\n", i+1);
+            printf("%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
             printf("-----------------------------------------\n");
             printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
@@ -215,7 +215,7 @@ void showDailyData(daily *d[], int count) {
     }
     else {
             searchNum = searchNum-1;
-            printf("%d 일차\n", searchNum);
+            printf("%d 일차 갓생점수: %d\n", searchNum+1, d[searchNum]->godchecker);
             printf("-----------------------------------------\n");
             printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 

@@ -30,7 +30,7 @@ int main(void) {
         }
     
         else if (menuNum == 3) {
-            //일일 데이터 전체삭제
+            //전체 일일 데이터 삭제
             result = deleteDailyData(myDaily, count);
             if (result ==  1) count = 0; //삭제되었다면 count를 0으로 변환
         }
@@ -60,7 +60,7 @@ int main(void) {
         }
         else {
             //잘못된 입력 
-            printf("잘못된 메뉴번호입니다\n");
+            printf("\n잘못된 메뉴번호입니다\n");
         }
 
     }

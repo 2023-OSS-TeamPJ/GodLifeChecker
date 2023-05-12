@@ -36,9 +36,11 @@ int main(void) {
         }
         else if (menuNum == 4) {
             //일일 데이터 수정
+            updateDailyData(myDaily, count);
         }
         else if (menuNum == 5) {
             //일일 데이터 출력
+            showDailyData(myDaily, count);
         }
         else if (menuNum == 6) {
             //일별 갓생 평가

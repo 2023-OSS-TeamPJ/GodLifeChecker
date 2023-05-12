@@ -106,12 +106,79 @@ void addDailyData(standard *s, daily *d[], int count) {
 
 int deleteDailyData(daily *d[], int count) {
     int choice;
-    printf("정말로 삭제하시겠습니까?(삭제 :1)");
+    printf("정말로 삭제하시겠습니까?(삭제: 1)");
     scanf("%d", &choice);
     if (choice != 1) return 0;
     //데이터 전체삭제
     for (int i=count; i>=0; i--) {
         free(d[i]);
     }
+    printf("\n데이터가 모두 삭제 되었습니다!\n");
     return 1;
+}
+
+void updateDailyData(daily *d[], int count) {
+    int updateNum; //수정일자
+    printf("몇 번째 하루를 수정하고 싶으신가요? (취소: 0) ");
+    scanf("%d", &updateNum);
+    //취소할 경우 -> 나가기
+    if (updateNum== 0) return; 
+    //범위에 벗어난 일자를 입력할 경우 -> 나가기
+    else if (updateNum > count || updateNum < 1){
+        printf("\n해당 일자가 존재하지 않습니다.\n");
+        return;
+    }
+    else {
+        //수정하기
+        printf("사용자님이 %d 일째에 할당한 시간을 각 항목별로 수정하겠습니다\n", updateNum);
+        printf("*모든 시간은 분 단위로 적어주십시오*\n");
+        printf("-----------------------------------\n\n");
+        printf("오늘 하루 운동에 투자한 시간을 입력해주세요: ");
+        scanf("%d",&d[updateNum-1]->exerciseTime);
+        printf("오늘 하루 운동에 전공공부에 투자한 시간을 입력해주세요: ");
+        scanf("%d",&d[updateNum-1]->majorStudy);
+        printf("오늘 하루 전공 외 공부에 투자한 얼마나 투자하셨나요? ");
+        scanf("%d",&d[updateNum-1]->otherStudy);
+        printf("오늘 하루 얼마나 주무셨나요? ");
+        scanf("%d",&d[updateNum-1]->sleepTime);
+        printf("오늘 하루 몇 끼를 드셨나요? ");
+        scanf("%d",&d[updateNum-1]->mealCount);
+        printf("오늘 하루 책을 얼마나 읽으셨나요? ");
+        scanf("%d",&d[updateNum-1]->readingTime);
+        printf("오늘 하루 사람들과 얼마나 시간을 보내셨나요? ");
+        scanf("%d",&d[updateNum-1]->friendshipTime);
+
+        printf("\n수정이 완료 되었습니다!\n");
+    }
+}
+
+void showDailyData(daily *d[], int count) {
+    int searchNum; //출력하고 싶은 일자
+    printf("몇 번째 하루를 보고 싶으신가요? (전체보기: 0) ");
+    scanf("%d", &searchNum);
+    //취소할 경우 -> 나가기
+    if (searchNum== 0) {
+        for(int i=0; i<count; i++) {
+            printf("%d 일차\n", i+1);
+            printf("-----------------------------------------\n");
+            printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
+            printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
+            d[i]->sleepTime, d[i]->mealCount, d[i]->readingTime, d[i]->friendshipTime);
+            printf("-----------------------------------------\n\n");
+        }
+    }
+    //범위에 벗어난 일자를 입력할 경우 -> 나가기
+    else if (searchNum > count || searchNum < 1){
+        printf("\n해당 일자가 존재하지 않습니다.\n");
+    }
+    else {
+            searchNum = searchNum-1;
+            printf("%d 일차\n", searchNum);
+            printf("-----------------------------------------\n");
+            printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
+            printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 
+            d[searchNum]->sleepTime, d[searchNum]->mealCount, d[searchNum]->readingTime, d[searchNum]->friendshipTime);
+            printf("-----------------------------------------\n\n");
+    }
+
 }

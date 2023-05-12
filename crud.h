@@ -26,4 +26,5 @@ typedef struct{
 void standardChecker(standard *s);
 void saveData(standard *s,daily *d[]  ,int count);
 int loadData(standard *s, daily *d[]);
+void addDailyData(standard *s,daily *d[]  ,int count);
 int menu();

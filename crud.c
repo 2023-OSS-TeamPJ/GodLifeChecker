@@ -26,8 +26,11 @@ int menu(){
     printf("3. 원하는 요일의 갓생데이터를 삭제!\n");
     printf("4. 원하는 날짜의 갓생데이터를 수정해 보자!\n");
     printf("5. 원하는 날짜의 갓생을 확인해보자!\n");
-    printf("6. 일일날짜의 ");
-
+    printf("6. 일일날짜의 갓생을 평가해보자!\n");
+    printf("7. 주간 갓생을 평가해보자!\n");    
+    printf("8. 저장!\n");
+    printf("0. 나가기\n");    
+    scanf("원하는 메뉴는? =>%d",&select);
     return select;
 }
 void saveData(standard *s, daily *d[], int count){

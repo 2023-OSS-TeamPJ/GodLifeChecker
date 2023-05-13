@@ -17,6 +17,7 @@ int main(void) {
     count = loadData(myStandard, myDaily);
     //저장된 데이터가 존재할 경우, 기준 데이터 존재도 확인
     if (count > 0) standardExist = 1;
+
     while(1) {
         menuNum = menu();
         
@@ -68,6 +69,5 @@ int main(void) {
             //잘못된 입력을 받았을 경우
             printf("\n잘못된 메뉴번호입니다\n");
         }
-
     }
 }

@@ -8,7 +8,7 @@ int main(void) {
     int menuNum; //사용자가 선택한 메뉴번호
     int count = 0; //입력 되어있는 데이터의 개수
     int result; //함수별 결과값
-    int standardExist = 0;
+    int standardExist = 0; //기준 데이터 존재 여부
     //갓생기준 저장공간 메모리 할당 & 일일데이터 저장공간 선언
     standard *myStandard = (standard*)malloc(sizeof(standard));
     daily *myDaily[28];
@@ -60,11 +60,12 @@ int main(void) {
             //나가기
             break;
         }
-        else if (count == 0) {
-            printf("기준을 먼저 입력")
+        else if (standardExist == 0) { 
+            //기준 데이터가 없을 경우
+            printf("기준을 먼저 입력해주세요\n");
         }
         else {
-            //잘못된 입력 
+            //잘못된 입력을 받았을 경우
             printf("\n잘못된 메뉴번호입니다\n");
         }
 

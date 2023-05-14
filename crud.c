@@ -94,11 +94,17 @@ double calculatorDaily(standard *s, daily *d){
     evaluate[0]=d->exerciseTime/s->exerciseTime*100;
     printf("운동은 평균 %.2f 하였습니다.", evaluate[0]);
     evaluate[1]=d->majorStudy/s->majorStudy*100;
+    printf("주요과목은 평균 %.2f 하였습니다.", evaluate[1]);
     evaluate[2]=d->otherStudy/s->otherStudy*100;
+    printf("서브과목은 평균 %.2f 하였습니다.", evaluate[2]);
     evaluate[3]=d->sleepTime/s->sleepTime*100;
+    printf("수면시간은 평균 %.2f 하였습니다.", evaluate[3]);
     evaluate[4]=d->readingTime/s->readingTime*100;
+    printf("독서시간은 평균 %.2f 하였습니다.", evaluate[4]);
     evaluate[5]=d->mealCount/s->mealCount*100;
+    printf("식사횟수은 평균 %.2f 하였습니다.", evaluate[5]);
     evaluate[6]=d->friendshipTime/s->friendshipTime*100;
+    printf("사교시간은 평균 %.2f 하였습니다.", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) error=1;
         break;
@@ -201,7 +207,7 @@ void showDailyData(daily *d[], int count) {
     //취소할 경우 -> 나가기
     if (searchNum== 0) {
         for(int i=0; i<count; i++) {
-            printf("%d 일차\n", i+1);
+            printf("%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
             printf("-----------------------------------------\n");
             printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
@@ -215,7 +221,7 @@ void showDailyData(daily *d[], int count) {
     }
     else {
             searchNum = searchNum-1;
-            printf("%d 일차\n", searchNum);
+            printf("%d 일차 갓생점수: %d\n", searchNum+1, d[searchNum]->godchecker);
             printf("-----------------------------------------\n");
             printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 

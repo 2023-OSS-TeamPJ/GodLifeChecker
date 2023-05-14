@@ -18,7 +18,7 @@ typedef struct{
     int mealCount;
     int readingTime;
     int friendshipTime;
-    double godchecker;
+    int godchecker;
 }daily;
 
 

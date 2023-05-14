@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "crud.h"
+//#include "crud.h"
 #include "evaluate.h"
 
 
@@ -44,7 +44,7 @@ int main(void) {
         }
         else if (menuNum == 6) {
             //일별 갓생 평가
-            calculatorDaily(myStandard, myDaily);
+            conformDaily(myStandard, myDaily);
         }
         else if (menuNum == 7) {
             //주별 갓생 평가

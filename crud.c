@@ -23,7 +23,7 @@ int menu(){
     int select;
     printf("1. 나의 갓생 기준 설정/수정\n");
     printf("2. 오늘 얼마나 하셨나요?\n");
-    printf("3. 원하는 요일의 갓생데이터를 삭제!\n");
+    printf("3. 전체 갓생데이터를 삭제!\n");
     printf("4. 원하는 날짜의 갓생데이터를 수정해 보자!\n");
     printf("5. 원하는 날짜의 갓생을 확인해보자!\n");
     printf("6. 일일날짜의 갓생을 평가해보자!\n");
@@ -33,17 +33,18 @@ int menu(){
     scanf("원하는 메뉴는? =>%d",&select);
     return select;
 }
+
 void saveData(standard *s, daily *d[], int count){
     int i = 0 ;
     FILE *fp;
     fp = fopen("standardText.txt", "wt");
-    fprintf(fp,"%s %s %s %s %s %s %s \n",s->exerciseTime, s->majorStudy, s->otherStudy,s->sleepTime, s->mealCount,s->readingTime,s->friendshipTime );
+    fprintf(fp,"%d %d %d %d %d %d %d \n",s->exerciseTime, s->majorStudy, s->otherStudy,s->sleepTime, s->mealCount,s->readingTime,s->friendshipTime );
     fclose(fp);
 
     fp = fopen("DailyData.txt", "wt");
     for(; i < count ; i ++){
-        if(s[i]== NULL)continue;
-        fprintf(fp,"%s %s %s %s %s %s %s %s \n", d[i]->day, d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime);
+        if(d[i]== NULL)continue;
+        fprintf(fp,"%d %d %d %d %d %d %d %d \n", d[i]->day, d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime);
     }
     fclose(fp);
     printf("SAVE!!\n");
@@ -86,6 +87,42 @@ int loadData(standard *s, daily *d[]){
     return i;
 
 }
+double calculatorDaily(standard *s, daily *d){
+    double evaluate[7];
+    int error=0;
+    double sum;
+    evaluate[0]=d->exerciseTime/s->exerciseTime*100;
+    printf("운동은 평균 %.2f 하였습니다.", evaluate[0]);
+    evaluate[1]=d->majorStudy/s->majorStudy*100;
+    evaluate[2]=d->otherStudy/s->otherStudy*100;
+    evaluate[3]=d->sleepTime/s->sleepTime*100;
+    evaluate[4]=d->readingTime/s->readingTime*100;
+    evaluate[5]=d->mealCount/s->mealCount*100;
+    evaluate[6]=d->friendshipTime/s->friendshipTime*100;
+    for(int i = 0 ; i < 7 ; i ++){
+        if(evaluate[i]<50) error=1;
+        break;
+        sum+=evaluate[i];
+    }
+    double average = sum/7;
+    if(error==0){
+        if(average>=120){
+            return 5;
+        }
+        if(average>=100){
+            return 4;
+        }
+        if(average>=80){
+            return 3;
+        }
+        if(80>average){
+            return 2;
+        }
+    }else{
+        return 0;
+    }
+}
+
 
 void addDailyData(standard *s, daily *d[], int count) {
     printf("사용자님이 %d 일째에 할당한 시간을 각 항목별로 입력받겠습니다\n", count+1);
@@ -105,6 +142,8 @@ void addDailyData(standard *s, daily *d[], int count) {
     scanf("%d",&d[count]->readingTime);
     printf("오늘 하루 사람들과 얼마나 시간을 보내셨나요? ");
     scanf("%d",&d[count]->friendshipTime);
+    d[count]->godchecker = calculatorDaily(s, d[count]);
+
 }
 
 int deleteDailyData(daily *d[], int count) {

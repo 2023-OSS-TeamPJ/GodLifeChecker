@@ -1,76 +1,68 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "evaluate.h"
-#include "crud.h"
 
 
-void calculatorDaily(standard *s, daily *d){
-    double evaluate[7];
-    int error=0;
-    double sum;
-    evaluate[0]=d->exerciseTime/s->exerciseTime*100;
-    evaluate[1]=d->majorStudy/s->majorStudy*100;
-    evaluate[2]=d->otherStudy/s->otherStudy*100;
-    evaluate[3]=d->sleepTime/s->sleepTime*100;
-    evaluate[4]=d->readingTime/s->readingTime*100;
-    evaluate[5]=d->mealCount/s->mealCount*100;
-    evaluate[6]=d->friendshipTime/s->friendshipTime*100;
-    for(int i = 0 ; i < 7 ; i ++){
-        if(evaluate[i]<50) error=1;
-        sum+=evaluate[i];
+
+void conformDaily(standard *s, daily *d){
+    
+    int result;
+    result = d->godchecker;
+    
+    if(result>=5){
+        printf("초 갓생이군요!!!");
+        return;
     }
-    double average = sum/7;
-
-    if(error==0){
-        if(average>=120){
-            printf("초 갓생이군요!!!");
-            d->godChecker=5;
-            return;
-        }
-        if(average>=100){
+    if(result>=4){
             printf("갓생이네요!");
-            d->godChecker=4;
             return;
-        }
-        if(average>=80){
+    }
+    if(result>=3){
             printf("범생이시군요.");
-            d->godChecker=3;
             return;
-        }
-        if(80>average){
+    }
+    if(3>result){
             printf("미생입니다.");
-            d->godChecker=0;
-            return;
-        }
-    }else{
+        return;
+    }
+    else{
         printf("미생입니다 (불균형한 삶 입니다.)");
-        d->godChecker=0;
         return;
     }
 }
 
 void calculatorWeek(daily *d[]){
-    double everage;
-    int limit;
-    if(sizeof(d)/sizeof(daily*)<7)limit = sizeof(d)/sizeof(daily*);
-    else limit = 7;
-
-    for(int i = 0 ; i < limit ; i ++){
-        everage = everage+d[i]->godchecker;
+    int week;
+    if(sizeof(*d)/sizeof(daily*)<7){
+        printf("7이하의 데이터 충분한 데이터가 모이지 않았습니다."); 
+        return;
     }
-    everage = everage/limit;
-    if(everage>=120){
+    printf("몇주차의 갓생을 알고싶으신가요?");
+    scanf("%d",&week);
+    int start = (week-1)*7 ;
+    double result;
+    for(int i = 0 ; i < 7 ; i++){
+        result += d[start+i]->godchecker;
+        if(d[start+i]==NULL){
+            printf("이번 주차의 데이터가 부족합니다.");
+            return;
+        }
+    }
+
+    result = result/7;
+    if(result>=4.5){
         printf("이번주는 초 갓생처럼 사셨군요!!!");
         return;
     }
-    if(everage>=100){
+    if(result>=4){
         printf("이번주는 갓생이네요!");
         return;
     }
-    if(everage>=80){
+    if(result>=3){
         printf("이번주는 범생을 사셨네요.");
         return;
     }
-    if(80>everage){
+    else{
         printf("이번주는 미생입니다.");
         return;
     }

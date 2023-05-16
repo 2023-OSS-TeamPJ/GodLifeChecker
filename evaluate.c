@@ -4,7 +4,7 @@
 
 
 
-void conformDaily(standard *s, daily *d){
+void conformDaily(standard *s, daily *d[]){
     
     int result;
     result = d->godchecker;

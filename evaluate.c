@@ -5,9 +5,12 @@
 
 
 void conformDaily(standard *s, daily *d[]){
-    
+    int  day;
+    printf("원하는 날짜는?");
+    scanf("%d",&day);
+
     int result;
-    result = d->godchecker;
+    result = d[day-1]->godchecker;
     
     if(result>=5){
         printf("초 갓생이군요!!!");

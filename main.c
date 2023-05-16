@@ -17,9 +17,11 @@ int main(void) {
     //파일로드
     count = loadData(myStandard, myDaily);
     //저장된 데이터가 존재할 경우, 기준 데이터 존재도 확인
-    if (count > 0) standardExist = 1;
+
 
     while(1) {
+        
+        if (count > 0) standardExist = 1;
         menuNum = menu();
         
         if (menuNum == 1) {
@@ -52,7 +54,7 @@ int main(void) {
         }
         else if (menuNum == 7 && standardExist != 0) {
             //주별 갓생 평가
-            calculatorWeek(myStandard);
+            calculatorWeek(myDaily);
         }
         else if (menuNum == 8) {
             //데이터 저장

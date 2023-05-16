@@ -3,7 +3,6 @@
 #include "evaluate.h"
 
 
-
 void conformDaily(standard *s, daily *d[]){
     int  day;
     printf("원하는 날짜는?");

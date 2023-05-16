@@ -10,23 +10,23 @@ void conformDaily(standard *s, daily *d){
     result = d->godchecker;
     
     if(result>=5){
-        printf("ì´ˆ ê°“ìƒì´êµ°ìš”!!!");
+        printf("ÃÊ °«»ıÀÌ±º¿ä!!!");
         return;
     }
     if(result>=4){
-            printf("ê°“ìƒì´ë„¤ìš”!");
+            printf("°«»ıÀÌ³×¿ä!");
             return;
     }
     if(result>=3){
-            printf("ë²”ìƒì´ì‹œêµ°ìš”.");
+            printf("¹ü»ıÀÌ½Ã±º¿ä.");
             return;
     }
     if(3>result){
-            printf("ë¯¸ìƒì…ë‹ˆë‹¤.");
+            printf("¹Ì»ıÀÔ´Ï´Ù.");
         return;
     }
     else{
-        printf("ë¯¸ìƒì…ë‹ˆë‹¤ (ë¶ˆê· í˜•í•œ ì‚¶ ì…ë‹ˆë‹¤.)");
+        printf("¹Ì»ıÀÔ´Ï´Ù (ºÒ±ÕÇüÇÑ »î ÀÔ´Ï´Ù.)");
         return;
     }
 }
@@ -34,36 +34,36 @@ void conformDaily(standard *s, daily *d){
 void calculatorWeek(daily *d[]){
     int week;
     if(sizeof(*d)/sizeof(daily*)<7){
-        printf("7ì´í•˜ì˜ ë°ì´í„° ì¶©ë¶„í•œ ë°ì´í„°ê°€ ëª¨ì´ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤."); 
+        printf("7ÀÌÇÏÀÇ µ¥ÀÌÅÍ ÃæºĞÇÑ µ¥ÀÌÅÍ°¡ ¸ğÀÌÁö ¾Ê¾Ò½À´Ï´Ù."); 
         return;
     }
-    printf("ëª‡ì£¼ì°¨ì˜ ê°“ìƒì„ ì•Œê³ ì‹¶ìœ¼ì‹ ê°€ìš”?");
+    printf("¸îÁÖÂ÷ÀÇ °«»ıÀ» ¾Ë°í½ÍÀ¸½Å°¡¿ä?");
     scanf("%d",&week);
     int start = (week-1)*7 ;
     double result;
     for(int i = 0 ; i < 7 ; i++){
         result += d[start+i]->godchecker;
         if(d[start+i]==NULL){
-            printf("ì´ë²ˆ ì£¼ì°¨ì˜ ë°ì´í„°ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+            printf("ÀÌ¹ø ÁÖÂ÷ÀÇ µ¥ÀÌÅÍ°¡ ºÎÁ·ÇÕ´Ï´Ù.");
             return;
         }
     }
 
     result = result/7;
     if(result>=4.5){
-        printf("ì´ë²ˆì£¼ëŠ” ì´ˆ ê°“ìƒì²˜ëŸ¼ ì‚¬ì…¨êµ°ìš”!!!");
+        printf("ÀÌ¹øÁÖ´Â ÃÊ °«»ıÃ³·³ »ç¼Ì±º¿ä!!!");
         return;
     }
     if(result>=4){
-        printf("ì´ë²ˆì£¼ëŠ” ê°“ìƒì´ë„¤ìš”!");
+        printf("ÀÌ¹øÁÖ´Â °«»ıÀÌ³×¿ä!");
         return;
     }
     if(result>=3){
-        printf("ì´ë²ˆì£¼ëŠ” ë²”ìƒì„ ì‚¬ì…¨ë„¤ìš”.");
+        printf("ÀÌ¹øÁÖ´Â ¹ü»ıÀ» »ç¼Ì³×¿ä.");
         return;
     }
     else{
-        printf("ì´ë²ˆì£¼ëŠ” ë¯¸ìƒì…ë‹ˆë‹¤.");
+        printf("ÀÌ¹øÁÖ´Â ¹Ì»ıÀÔ´Ï´Ù.");
         return;
     }
 }

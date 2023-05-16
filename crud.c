@@ -4,23 +4,25 @@
 
 
 void standardChecker(standard *s){
-    printf("당신이 원하는 운동 시간은?");
+    getchar();
+    printf("\n당신이 원하는 운동 시간은? ");
     scanf("%d",&s->exerciseTime);
-    printf("당신이 원하는 전공공부 시간은?");
+    printf("당신이 원하는 전공공부 시간은? ");
     scanf("%d",&s->majorStudy);
-    printf("당신이 원하는 전공 외 공부 시간은?");
+    printf("당신이 원하는 전공 외 공부 시간은? ");
     scanf("%d",&s->otherStudy);
-    printf("당신이 원하는 수면 시간은?");
+    printf("당신이 원하는 수면 시간은? ");
     scanf("%d",&s->sleepTime);
-    printf("당신이 원하는 식사 횟수는?");
+    printf("당신이 원하는 식사 횟수는? ");
     scanf("%d",&s->mealCount);
-    printf("당신이 원하는 독서시간은?");
+    printf("당신이 원하는 독서시간은? ");
     scanf("%d",&s->readingTime);
-    printf("당신이 원하는 사교시간은?");
+    printf("당신이 원하는 사교시간은? ");
     scanf("%d",&s->friendshipTime);
 }
 int menu(){
     int select;
+    printf("\n===========메뉴============\n");
     printf("1. 나의 갓생 기준 설정/수정\n");
     printf("2. 오늘 얼마나 하셨나요?\n");
     printf("3. 전체 갓생데이터를 삭제!\n");
@@ -30,7 +32,8 @@ int menu(){
     printf("7. 주간 갓생을 평가해보자!\n");    
     printf("8. 저장!\n");
     printf("0. 나가기\n");    
-    scanf("원하는 메뉴는? =>%d",&select);
+    printf("원하는 메뉴는? => ");
+    scanf("%d",&select);
     return select;
 }
 
@@ -87,24 +90,24 @@ int loadData(standard *s, daily *d[]){
     return i;
 
 }
-double calculatorDaily(standard *s, daily *d){
-    double evaluate[7];
+int calculatorDaily(standard *s, daily *d){
+    int evaluate[7];
     int error=0;
     double sum;
-    evaluate[0]=d->exerciseTime/s->exerciseTime*100;
-    printf("운동은 평균 %.2f 하였습니다.", evaluate[0]);
-    evaluate[1]=d->majorStudy/s->majorStudy*100;
-    printf("주요과목은 평균 %.2f 하였습니다.", evaluate[1]);
-    evaluate[2]=d->otherStudy/s->otherStudy*100;
-    printf("서브과목은 평균 %.2f 하였습니다.", evaluate[2]);
-    evaluate[3]=d->sleepTime/s->sleepTime*100;
-    printf("수면시간은 평균 %.2f 하였습니다.", evaluate[3]);
-    evaluate[4]=d->readingTime/s->readingTime*100;
-    printf("독서시간은 평균 %.2f 하였습니다.", evaluate[4]);
-    evaluate[5]=d->mealCount/s->mealCount*100;
-    printf("식사횟수은 평균 %.2f 하였습니다.", evaluate[5]);
-    evaluate[6]=d->friendshipTime/s->friendshipTime*100;
-    printf("사교시간은 평균 %.2f 하였습니다.", evaluate[6]);
+    evaluate[0]=(d->exerciseTime/s->exerciseTime)*100;
+    printf("\n운동은 %d 하였습니다.\n", evaluate[0]);
+    evaluate[1]=(d->majorStudy/s->majorStudy)*100;
+    printf("주요과목은 %d 하였습니다.\n", evaluate[1]);
+    evaluate[2]=(d->otherStudy/s->otherStudy)*100;
+    printf("서브과목은 %d 하였습니다.\n", evaluate[2]);
+    evaluate[3]=(d->sleepTime/s->sleepTime)*100;
+    printf("수면시간은 %d 하였습니다.\n", evaluate[3]);
+    evaluate[4]=(d->readingTime/s->readingTime)*100;
+    printf("독서시간은 %d 하였습니다.\n", evaluate[4]);
+    evaluate[5]=(d->mealCount/s->mealCount)*100;
+    printf("식사횟수은 %.2f 하였습니다.\n", evaluate[5]);
+    evaluate[6]=(d->friendshipTime/s->friendshipTime)*100;
+    printf("사교시간은 %.2f 하였습니다.\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) error=1;
         break;
@@ -128,7 +131,6 @@ double calculatorDaily(standard *s, daily *d){
         return 0;
     }
 }
-
 
 void addDailyData(standard *s, daily *d[], int count) {
     printf("사용자님이 %d 일째에 할당한 시간을 각 항목별로 입력받겠습니다\n", count+1);

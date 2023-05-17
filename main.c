@@ -61,7 +61,7 @@ int main(void) {
             //데이터 저장
             saveData(myStandard, myDaily, count);
         }
-        else if (menuNum == 9) {
+        else if (menuNum == 0) {
             //나가기
             break;
         }
@@ -74,4 +74,5 @@ int main(void) {
             printf("\n잘못된 메뉴번호입니다\n");
         }
     }
+    //a
 }

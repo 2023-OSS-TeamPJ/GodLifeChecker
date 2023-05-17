@@ -74,5 +74,4 @@ int main(void) {
             printf("\n잘못된 메뉴번호입니다\n");
         }
     }
-    //a
 }

@@ -94,7 +94,8 @@ int calculatorDaily(standard *s, daily *d){
     int evaluate[7];
     int error=0;
     double sum;
-    evaluate[0]=(d->exerciseTime/s->exerciseTime)*100;
+    printf("%d\n", s->exerciseTime);
+    evaluate[0]=(d->exerciseTime/s->exerciseTime);
     printf("\n운동은 %d 하였습니다.\n", evaluate[0]);
     evaluate[1]=(d->majorStudy/s->majorStudy)*100;
     printf("주요과목은 %d 하였습니다.\n", evaluate[1]);
@@ -105,9 +106,9 @@ int calculatorDaily(standard *s, daily *d){
     evaluate[4]=(d->readingTime/s->readingTime)*100;
     printf("독서시간은 %d 하였습니다.\n", evaluate[4]);
     evaluate[5]=(d->mealCount/s->mealCount)*100;
-    printf("식사횟수은 %.2f 하였습니다.\n", evaluate[5]);
+    printf("식사횟수은 %d 하였습니다.\n", evaluate[5]);
     evaluate[6]=(d->friendshipTime/s->friendshipTime)*100;
-    printf("사교시간은 %.2f 하였습니다.\n", evaluate[6]);
+    printf("사교시간은 %d 하였습니다.\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) error=1;
         break;

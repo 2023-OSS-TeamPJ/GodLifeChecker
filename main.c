@@ -6,17 +6,17 @@
 
 
 int main(void) {
-    int menuNum; //»ç¿ëÀÚ°¡ ¼±ÅÃÇÑ ¸Ş´º¹øÈ£
-    int count = 0; //ÀÔ·Â µÇ¾îÀÖ´Â µ¥ÀÌÅÍÀÇ °³¼ö
-    int result; //ÇÔ¼öº° °á°ú°ª
-    int standardExist = 0; //±âÁØ µ¥ÀÌÅÍ Á¸Àç ¿©ºÎ
-    //°«»ı±âÁØ ÀúÀå°ø°£ ¸Ş¸ğ¸® ÇÒ´ç & ÀÏÀÏµ¥ÀÌÅÍ ÀúÀå°ø°£ ¼±¾ğ
+    int menuNum; //ì‚¬ìš©ìê°€ ì„ íƒí•œ ë©”ë‰´ë²ˆí˜¸
+    int count = 0; //ì…ë ¥ ë˜ì–´ìˆëŠ” ë°ì´í„°ì˜ ê°œìˆ˜
+    int result; //í•¨ìˆ˜ë³„ ê²°ê³¼ê°’
+    int standardExist = 0; //ê¸°ì¤€ ë°ì´í„° ì¡´ì¬ ì—¬ë¶€
+    //ê°“ìƒê¸°ì¤€ ì €ì¥ê³µê°„ ë©”ëª¨ë¦¬ í• ë‹¹ & ì¼ì¼ë°ì´í„° ì €ì¥ê³µê°„ ì„ ì–¸
     standard *myStandard = (standard*)malloc(sizeof(standard));
     daily *myDaily[28];
 
-    //ÆÄÀÏ·Îµå
+    //íŒŒì¼ë¡œë“œ
     count = loadData(myStandard, myDaily);
-    //ÀúÀåµÈ µ¥ÀÌÅÍ°¡ Á¸ÀçÇÒ °æ¿ì, ±âÁØ µ¥ÀÌÅÍ Á¸Àçµµ È®ÀÎ
+    //ì €ì¥ëœ ë°ì´í„°ê°€ ì¡´ì¬í•  ê²½ìš°, ê¸°ì¤€ ë°ì´í„° ì¡´ì¬ë„ í™•ì¸
     if (count > 0) standardExist = 1;
 
 
@@ -24,53 +24,53 @@ int main(void) {
 
         menuNum = menu();
         if (menuNum == 1) {
-            //°«»ı ±âÁØ ¼³Á¤/¼öÁ¤ÇÏ±â
+            //ê°“ìƒ ê¸°ì¤€ ì„¤ì •/ìˆ˜ì •í•˜ê¸°
             standardChecker(myStandard);
             standardExist = 1;
         }
         else if (menuNum == 2 && standardExist != 0) {
-            //ÀÏÀÏ µ¥ÀÌÅÍ ÀÔ·Â
-            myDaily[count] = (daily*)malloc(sizeof(daily)); //ÀÏÀÏµ¥ÀÌÅÍ ÀúÀå°ø°£ ¸Ş¸ğ¸® ÇÒ´ç
+            //ì¼ì¼ ë°ì´í„° ì…ë ¥
+            myDaily[count] = (daily*)malloc(sizeof(daily)); //ì¼ì¼ë°ì´í„° ì €ì¥ê³µê°„ ë©”ëª¨ë¦¬ í• ë‹¹
             addDailyData(myStandard, myDaily, count);
             count ++;
         }
     
         else if (menuNum == 3 && standardExist != 0) {
-            //ÀüÃ¼ ÀÏÀÏ µ¥ÀÌÅÍ »èÁ¦
+            //ì „ì²´ ì¼ì¼ ë°ì´í„° ì‚­ì œ
             result = deleteDailyData(myDaily, count);
-            if (result ==  1) count = 0; //»èÁ¦µÇ¾ú´Ù¸é count¸¦ 0À¸·Î º¯È¯
+            if (result ==  1) count = 0; //ì‚­ì œë˜ì—ˆë‹¤ë©´ countë¥¼ 0ìœ¼ë¡œ ë³€í™˜
         }
         else if (menuNum == 4 && standardExist != 0) {
-            //ÀÏÀÏ µ¥ÀÌÅÍ ¼öÁ¤
+            //ì¼ì¼ ë°ì´í„° ìˆ˜ì •
             updateDailyData(myDaily, count);
         }
         else if (menuNum == 5 && standardExist != 0) {
-            //ÀÏÀÏ µ¥ÀÌÅÍ Ãâ·Â
+            //ì¼ì¼ ë°ì´í„° ì¶œë ¥
             showDailyData(myDaily, count);
         }
         else if (menuNum == 6 && standardExist != 0) {
-            //ÀÏº° °«»ı Æò°¡
+            //ì¼ë³„ ê°“ìƒ í‰ê°€
             conformDaily(myStandard, myDaily);
         }
         else if (menuNum == 7 && standardExist != 0) {
-            //ÁÖº° °«»ı Æò°¡
+            //ì£¼ë³„ ê°“ìƒ í‰ê°€
             calculatorWeek(myDaily, count);
         }
         else if (menuNum == 8) {
-            //µ¥ÀÌÅÍ ÀúÀå
+            //ë°ì´í„° ì €ì¥
             saveData(myStandard, myDaily, count);
         }
         else if (menuNum == 0) {
-            //³ª°¡±â
+            //ë‚˜ê°€ê¸°
             break;
         }
         else if (standardExist == 0) { 
-            //±âÁØ µ¥ÀÌÅÍ°¡ ¾øÀ» °æ¿ì
-            printf("±âÁØÀ» ¸ÕÀú ÀÔ·ÂÇØÁÖ¼¼¿ä\n");
+            //ê¸°ì¤€ ë°ì´í„°ê°€ ì—†ì„ ê²½ìš°
+            printf("ê¸°ì¤€ì„ ë¨¼ì € ì…ë ¥í•´ì£¼ì„¸ìš”\n");
         }
         else {
-            //Àß¸øµÈ ÀÔ·ÂÀ» ¹Ş¾ÒÀ» °æ¿ì
-            printf("\nÀß¸øµÈ ¸Ş´º¹øÈ£ÀÔ´Ï´Ù\n");
+            //ì˜ëª»ëœ ì…ë ¥ì„ ë°›ì•˜ì„ ê²½ìš°
+            printf("\nì˜ëª»ëœ ë©”ë‰´ë²ˆí˜¸ì…ë‹ˆë‹¤\n");
         }
     }
 }

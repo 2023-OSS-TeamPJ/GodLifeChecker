@@ -96,19 +96,19 @@ int calculatorDaily(standard *s, daily *d){
     double sum;
     printf("%d\n", s->exerciseTime);
     evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
-    printf("\n운동은 %d%% 하였습니다.\n", evaluate[0]);
+    printf("\n운동은 %d%% 달성 하였습니다.\n", evaluate[0]);
     evaluate[1]=(d->majorStudy*100/s->majorStudy);
-    printf("주요과목은 %d%% 하였습니다.\n", evaluate[1]);
+    printf("주요과목은 %d%% 달성 하였습니다.\n", evaluate[1]);
     evaluate[2]=(d->otherStudy*100/s->otherStudy);
-    printf("서브과목은 %d%% 하였습니다.\n", evaluate[2]);
+    printf("서브과목은 %d%% 달성 하였습니다.\n", evaluate[2]);
     evaluate[3]=(d->sleepTime*100/s->sleepTime);
-    printf("수면시간은 %d%% 하였습니다.\n", evaluate[3]);
+    printf("수면시간은 %d%% 달성 하였습니다.\n", evaluate[3]);
     evaluate[4]=(d->readingTime*100/s->readingTime);
-    printf("독서시간은 %d%% 하였습니다.\n", evaluate[4]);
+    printf("독서시간은 %d%% 달성 하였습니다.\n", evaluate[4]);
     evaluate[5]=(d->mealCount*100/s->mealCount);
-    printf("식사횟수은 %d%% 하였습니다.\n", evaluate[5]);
+    printf("식사횟수은 %d%% 달성 하였습니다.\n", evaluate[5]);
     evaluate[6]=(d->friendshipTime*100/s->friendshipTime);
-    printf("사교시간은 %d%% 하였습니다.\n", evaluate[6]);
+    printf("사교시간은 %d%% 달성 하였습니다.\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) error=1;
         break;
@@ -205,7 +205,7 @@ void updateDailyData(daily *d[], int count) {
 
 void showDailyData(daily *d[], int count) {
     int searchNum; //출력하고 싶은 일자
-    char collect[] = {"운동", "전공공부","기타공부", "수면", "식사횟수", "독서", "사교" };
+    char* collect[7] = {"운동", "전공공부","기타공부", "수면", "식사횟수", "독서", "사교" };
     printf("\n몇 번째 하루를 보고 싶으신가요? (전체보기: 0) ");
     scanf("%d", &searchNum);
     //취소할 경우 -> 나가기

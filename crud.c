@@ -5,7 +5,7 @@
 
 void standardChecker(standard *s){
     getchar();
-    printf("*모든 시간은 분 단위로 적어주십시오*\n");
+    printf("\n*모든 시간은 분 단위로 적어주십시오*\n");
     printf("\n당신이 원하는 운동 시간은? ");
     scanf("%d",&s->exerciseTime);
     printf("당신이 원하는 전공공부 시간은? ");
@@ -205,6 +205,7 @@ void updateDailyData(daily *d[], int count) {
 
 void showDailyData(daily *d[], int count) {
     int searchNum; //출력하고 싶은 일자
+    char collect[] = {"운동", "전공공부","기타공부", "수면", "식사횟수", "독서", "사교" };
     printf("\n몇 번째 하루를 보고 싶으신가요? (전체보기: 0) ");
     scanf("%d", &searchNum);
     //취소할 경우 -> 나가기
@@ -212,8 +213,8 @@ void showDailyData(daily *d[], int count) {
         for(int i=0; i<count; i++) {
             printf("%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
             printf("-----------------------------------------\n");
-            printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
-            printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
+            printf("%8s%8s%8s%8s%8s%8s%8s\n", collect[0],collect[1],collect[2],collect[3],collect[4],collect[5],collect[6]);
+            printf("%8d%8d%8d%8d%8d%8d%8d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
             d[i]->sleepTime, d[i]->mealCount, d[i]->readingTime, d[i]->friendshipTime);
             printf("-----------------------------------------\n\n");
         }

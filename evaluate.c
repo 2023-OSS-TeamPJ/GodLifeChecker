@@ -31,9 +31,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% \n", evaluate[4]);
         printf("식사횟수은 %d%% \n", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....\n", evaluate[6]);
-        printf("★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n");
-        printf("★ 갓생이군요!! 그럼 기준을 조금 높여보는건 어떨까요? ★\n");
-        printf("★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n");
+        printf("****************************************************\n");
+        printf("* 갓생이군요!! 그럼 기준을 조금 높여보는건 어떨까요? *\n");
+        printf("****************************************************\n");
         return;
     }
     if(result>=4){
@@ -44,9 +44,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% ,", evaluate[4]);
         printf("식사횟수은 %d%% ,", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....", evaluate[6]);
-        printf("★★★★★★★★\n");
-        printf("★ 갓생이군요 ★\n");
-        printf("★★★★★★★★\n");
+        printf("*************\n");
+        printf("* 갓생이군요 *\n");
+        printf("*************\n");
             return;
     }
     if(result>=3){
@@ -57,9 +57,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% ,", evaluate[4]);
         printf("식사횟수은 %d%% ,", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....", evaluate[6]);
-        printf("★★★★★★★★★\n");
-        printf("★ 범생이시군요.★\n");
-        printf("★★★★★★★★★\n");
+        printf("****************\n");
+        printf("* 범생이시군요. *\n");
+        printf("****************\n");
             return;
     }
     if(3>result){
@@ -70,9 +70,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% ,", evaluate[4]);
         printf("식사횟수은 %d%% ,", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....", evaluate[6]);
-        printf("★★★★★★★★\n");
-        printf("★ 미생입니다.★\n");
-        printf("★★★★★★★★\n");
+        printf("**************\n");
+        printf("* 미생입니다. *\n");
+        printf("**************\n");
         return;
     }
     else{
@@ -108,22 +108,22 @@ void calculatorWeek(daily *d[], int count){
 
     result = result/7;
     if(result>=4.5){
-        printf("★★★★★★★★★★★★★★★★★★★\n");
-        printf("★ 이번주는 초 갓생처럼 사셨군요!!! ★\n");
-        printf("★★★★★★★★★★★★★★★★★★★\n");
+        printf("**********************************\n");
+        printf("* 이번주는 초 갓생처럼 사셨군요!!! *\n");
+        printf("**********************************\n");
         return;
     }
     if(result>=4){
-        printf("★★★★★★★★★★★★★\n");
-        printf("★ 이번주는 갓생이네요! ★\n");
-        printf("★★★★★★★★★★★★★\n");
+        printf("***********************\n");
+        printf("* 이번주는 갓생이네요! *\n");
+        printf("***********************\n");
         printf("이번주는 갓생이네요!");
         return;
     }
     if(result>=3){
-        printf("★★★★★★★★★★★★★★★★\n");
-        printf("★ 이번주는 범생을 사셨네요.  ★\n");
-        printf("★★★★★★★★★★★★★★★★\n");
+        printf("***************************\n");
+        printf("* 이번주는 범생을 사셨네요. *\n");
+        printf("***************************\n");
         return;
     }
     else{

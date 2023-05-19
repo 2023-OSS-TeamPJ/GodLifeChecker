@@ -48,7 +48,7 @@ void saveData(standard *s, daily *d[], int count){
     fp = fopen("DailyData.txt", "wt");
     for(; i < count ; i ++){
         if(d[i]== NULL)continue;
-        fprintf(fp," %d %d %d %d %d %d %d \n", d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime);
+        fprintf(fp," %d %d %d %d %d %d %d %d\n", d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime, d[i]->godchecker);
     }
     fclose(fp);
     printf("SAVE!!\n");
@@ -86,6 +86,7 @@ int loadData(standard *s, daily *d[]){
         fscanf(fp,"%d",&d[i]->mealCount);
         fscanf(fp,"%d",&d[i]->readingTime);
         fscanf(fp,"%d",&d[i]->friendshipTime);
+        fscanf(fp,"%d",&d[i]->godchecker);
     }
     fclose(fp);
     printf("Loading Complete\n");
@@ -95,7 +96,9 @@ int loadData(standard *s, daily *d[]){
 int calculatorDaily(standard *s, daily *d){
     int evaluate[7];
     int error=0;
-    double sum = 0;
+
+    double sum=0.0;
+
     printf("%d\n", s->exerciseTime);
     evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
     printf("\n운동은 %d%% 달성 하였습니다.\n", evaluate[0]);
@@ -112,8 +115,10 @@ int calculatorDaily(standard *s, daily *d){
     evaluate[6]=(d->friendshipTime*100/s->friendshipTime);
     printf("사교시간은 %d%% 달성 하였습니다.\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
-        if(evaluate[i]<50) error=1;
-        break;
+        if(evaluate[i]<50) {
+            error=1;
+            break;
+        }
         sum+=evaluate[i];
     }
     
@@ -122,10 +127,10 @@ int calculatorDaily(standard *s, daily *d){
         if(average>=120){
             return 5;
         }
-        if(average>=100){
+        if((average<120)&&(average>=100)){
             return 4;
         }
-        if(average>=80){
+        if((average<100)&&(average>=80)){
             return 3;
         }
         if(80>average){

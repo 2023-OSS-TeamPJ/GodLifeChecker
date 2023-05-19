@@ -10,7 +10,6 @@ typedef struct{
 }standard;
 
 typedef struct{
-    int day;
     int exerciseTime;
     int majorStudy;
     int otherStudy;

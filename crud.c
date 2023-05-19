@@ -5,6 +5,7 @@
 
 void standardChecker(standard *s){
     getchar();
+    printf("*모든 시간은 분 단위로 적어주십시오*\n");
     printf("\n당신이 원하는 운동 시간은? ");
     scanf("%d",&s->exerciseTime);
     printf("당신이 원하는 전공공부 시간은? ");
@@ -47,7 +48,7 @@ void saveData(standard *s, daily *d[], int count){
     fp = fopen("DailyData.txt", "wt");
     for(; i < count ; i ++){
         if(d[i]== NULL)continue;
-        fprintf(fp,"%d %d %d %d %d %d %d %d \n", d[i]->day, d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime);
+        fprintf(fp," %d %d %d %d %d %d %d \n", d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime);
     }
     fclose(fp);
     printf("SAVE!!\n");
@@ -75,9 +76,8 @@ int loadData(standard *s, daily *d[]){
     fp = fopen("DailyData.txt", "rt");
     for(; i < 100; i++){
         d[i] = (daily*)malloc(sizeof(daily));
-        fscanf(fp,"%d",&d[i]->day);
-        if(feof(fp))break;
         fscanf(fp,"%d",&d[i]->exerciseTime);
+        if(feof(fp))break;
         fscanf(fp,"%d",&d[i]->majorStudy);
         fscanf(fp,"%d",&d[i]->otherStudy);
         fscanf(fp,"%d",&d[i]->sleepTime);

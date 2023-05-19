@@ -94,20 +94,21 @@ int calculatorDaily(standard *s, daily *d){
     int evaluate[7];
     int error=0;
     double sum;
-    evaluate[0]=(d->exerciseTime/s->exerciseTime)*100;
-    printf("\n운동은 %d 하였습니다.\n", evaluate[0]);
-    evaluate[1]=(d->majorStudy/s->majorStudy)*100;
-    printf("주요과목은 %d 하였습니다.\n", evaluate[1]);
-    evaluate[2]=(d->otherStudy/s->otherStudy)*100;
-    printf("서브과목은 %d 하였습니다.\n", evaluate[2]);
-    evaluate[3]=(d->sleepTime/s->sleepTime)*100;
-    printf("수면시간은 %d 하였습니다.\n", evaluate[3]);
-    evaluate[4]=(d->readingTime/s->readingTime)*100;
-    printf("독서시간은 %d 하였습니다.\n", evaluate[4]);
-    evaluate[5]=(d->mealCount/s->mealCount)*100;
-    printf("식사횟수은 %.2f 하였습니다.\n", evaluate[5]);
-    evaluate[6]=(d->friendshipTime/s->friendshipTime)*100;
-    printf("사교시간은 %.2f 하였습니다.\n", evaluate[6]);
+    printf("%d\n", s->exerciseTime);
+    evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
+    printf("\n운동은 %d%% 하였습니다.\n", evaluate[0]);
+    evaluate[1]=(d->majorStudy*100/s->majorStudy);
+    printf("주요과목은 %d%% 하였습니다.\n", evaluate[1]);
+    evaluate[2]=(d->otherStudy*100/s->otherStudy);
+    printf("서브과목은 %d%% 하였습니다.\n", evaluate[2]);
+    evaluate[3]=(d->sleepTime*100/s->sleepTime);
+    printf("수면시간은 %d%% 하였습니다.\n", evaluate[3]);
+    evaluate[4]=(d->readingTime*100/s->readingTime);
+    printf("독서시간은 %d%% 하였습니다.\n", evaluate[4]);
+    evaluate[5]=(d->mealCount*100/s->mealCount);
+    printf("식사횟수은 %d%% 하였습니다.\n", evaluate[5]);
+    evaluate[6]=(d->friendshipTime*100/s->friendshipTime);
+    printf("사교시간은 %d%% 하였습니다.\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) error=1;
         break;
@@ -133,7 +134,7 @@ int calculatorDaily(standard *s, daily *d){
 }
 
 void addDailyData(standard *s, daily *d[], int count) {
-    printf("사용자님이 %d 일째에 할당한 시간을 각 항목별로 입력받겠습니다\n", count+1);
+    printf("\n사용자님이 %d 일째에 할당한 시간을 각 항목별로 입력받겠습니다\n", count+1);
     printf("*모든 시간은 분 단위로 적어주십시오*\n");
     printf("-----------------------------------\n\n");
     printf("오늘 하루 운동에 투자한 시간을 입력해주세요: ");
@@ -180,7 +181,7 @@ void updateDailyData(daily *d[], int count) {
     }
     else {
         //수정하기
-        printf("사용자님이 %d 일째에 할당한 시간을 각 항목별로 수정하겠습니다\n", updateNum);
+        printf("\n사용자님이 %d 일째에 할당한 시간을 각 항목별로 수정하겠습니다\n", updateNum);
         printf("*모든 시간은 분 단위로 적어주십시오*\n");
         printf("-----------------------------------\n\n");
         printf("오늘 하루 운동에 투자한 시간을 입력해주세요: ");
@@ -204,7 +205,7 @@ void updateDailyData(daily *d[], int count) {
 
 void showDailyData(daily *d[], int count) {
     int searchNum; //출력하고 싶은 일자
-    printf("몇 번째 하루를 보고 싶으신가요? (전체보기: 0) ");
+    printf("\n몇 번째 하루를 보고 싶으신가요? (전체보기: 0) ");
     scanf("%d", &searchNum);
     //취소할 경우 -> 나가기
     if (searchNum== 0) {

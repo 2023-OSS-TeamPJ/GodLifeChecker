@@ -6,7 +6,7 @@
 void conformDaily(standard *s, daily *d[]){
     int  day;
     int evaluate[7];
-    printf("ì›í•˜ëŠ” ë‚ ì§œëŠ”?");
+    printf("¿øÇÏ´Â ³¯Â¥´Â?");
     scanf("%d",&day);
 
     evaluate[0]=(d[day-1]->exerciseTime*100/s->exerciseTime);
@@ -22,61 +22,61 @@ void conformDaily(standard *s, daily *d[]){
 
     int result;
     result = d[day-1]->godchecker;
-    //í•­ëª©ë³„ í¼ì„¼í…Œì´ì§€ë„ ë‚˜ì˜¤ë©´ ì¢‹ì„ë“¯: ê·¸ë¦¬ê³  ë§ˆì§€ë§‰ì— â€œì¢…í•©í•´ë³¸ ê²°ê³¼~ ê°“ìƒ/ë²”ìƒ/ë¯¸ìƒ ì…ë‹ˆë‹¤â€œ
+    //Ç×¸ñº° ÆÛ¼¾Å×ÀÌÁöµµ ³ª¿À¸é ÁÁÀ»µí: ±×¸®°í ¸¶Áö¸·¿¡ ¡°Á¾ÇÕÇØº» °á°ú~ °«»ı/¹ü»ı/¹Ì»ı ÀÔ´Ï´Ù¡°
     if(result>=5){
-        printf("\nìš´ë™ì€ %d%% \n", evaluate[0]);
-        printf("ì£¼ìš”ê³¼ëª©ì€ %d%% \n", evaluate[1]);
-        printf("ì„œë¸Œê³¼ëª©ì€ %d%% \n", evaluate[2]);
-        printf("ìˆ˜ë©´ì‹œê°„ì€ %d%% \n", evaluate[3]);
-        printf("ë…ì„œì‹œê°„ì€ %d%% \n", evaluate[4]);
-        printf("ì‹ì‚¬íšŸìˆ˜ì€ %d%% \n", evaluate[5]);
-        printf("ì‚¬êµì‹œê°„ì€ %d%% ì…ë‹ˆë‹¤ ì´ë¥¼ ì´ ì¢…í•©í•´ë³¸ ê²°ê³¼.....\n", evaluate[6]);
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
-        printf("â˜†ê°“ìƒì´êµ°ìš”!! ê·¸ëŸ¼ ê¸°ì¤€ì„ ì¡°ê¸ˆ ë†’ì—¬ë³´ëŠ”ê±´ ì–´ë–¨ê¹Œìš”?â˜†\n");
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
+        printf("\n¿îµ¿Àº %d%% \n", evaluate[0]);
+        printf("ÁÖ¿ä°ú¸ñÀº %d%% \n", evaluate[1]);
+        printf("¼­ºê°ú¸ñÀº %d%% \n", evaluate[2]);
+        printf("¼ö¸é½Ã°£Àº %d%% \n", evaluate[3]);
+        printf("µ¶¼­½Ã°£Àº %d%% \n", evaluate[4]);
+        printf("½Ä»çÈ½¼öÀº %d%% \n", evaluate[5]);
+        printf("»ç±³½Ã°£Àº %d%% ÀÔ´Ï´Ù ÀÌ¸¦ ÃÑ Á¾ÇÕÇØº» °á°ú.....\n", evaluate[6]);
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
+        printf("¡Ù°«»ıÀÌ±º¿ä!! ±×·³ ±âÁØÀ» Á¶±İ ³ô¿©º¸´Â°Ç ¾î¶³±î¿ä?¡Ù\n");
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
         return;
     }
     if(result>=4){
-        printf("\nìš´ë™ì€ %d%% ,", evaluate[0]);
-        printf("ì£¼ìš”ê³¼ëª©ì€ %d%% ,", evaluate[1]);
-        printf("ì„œë¸Œê³¼ëª©ì€ %d%% ,", evaluate[2]);
-        printf("ìˆ˜ë©´ì‹œê°„ì€ %d%% ,", evaluate[3]);
-        printf("ë…ì„œì‹œê°„ì€ %d%% ,", evaluate[4]);
-        printf("ì‹ì‚¬íšŸìˆ˜ì€ %d%% ,", evaluate[5]);
-        printf("ì‚¬êµì‹œê°„ì€ %d%% ì…ë‹ˆë‹¤ ì´ë¥¼ ì´ ì¢…í•©í•´ë³¸ ê²°ê³¼.....", evaluate[6]);
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
-        printf("â˜† ê°“ìƒì´êµ°ìš” â˜†\n");
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
+        printf("\n¿îµ¿Àº %d%% ,", evaluate[0]);
+        printf("ÁÖ¿ä°ú¸ñÀº %d%% ,", evaluate[1]);
+        printf("¼­ºê°ú¸ñÀº %d%% ,", evaluate[2]);
+        printf("¼ö¸é½Ã°£Àº %d%% ,", evaluate[3]);
+        printf("µ¶¼­½Ã°£Àº %d%% ,", evaluate[4]);
+        printf("½Ä»çÈ½¼öÀº %d%% ,", evaluate[5]);
+        printf("»ç±³½Ã°£Àº %d%% ÀÔ´Ï´Ù ÀÌ¸¦ ÃÑ Á¾ÇÕÇØº» °á°ú.....", evaluate[6]);
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
+        printf("¡Ù °«»ıÀÌ±º¿ä ¡Ù\n");
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
             return;
     }
     if(result>=3){
-        printf("\nìš´ë™ì€ %d%% ,", evaluate[0]);
-        printf("ì£¼ìš”ê³¼ëª©ì€ %d%% ,", evaluate[1]);
-        printf("ì„œë¸Œê³¼ëª©ì€ %d%% ,", evaluate[2]);
-        printf("ìˆ˜ë©´ì‹œê°„ì€ %d%% ,", evaluate[3]);
-        printf("ë…ì„œì‹œê°„ì€ %d%% ,", evaluate[4]);
-        printf("ì‹ì‚¬íšŸìˆ˜ì€ %d%% ,", evaluate[5]);
-        printf("ì‚¬êµì‹œê°„ì€ %d%% ì…ë‹ˆë‹¤ ì´ë¥¼ ì´ ì¢…í•©í•´ë³¸ ê²°ê³¼.....", evaluate[6]);
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
-        printf("â˜† ë²”ìƒì´ì‹œêµ°ìš”.â˜†\n");
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
+        printf("\n¿îµ¿Àº %d%% ,", evaluate[0]);
+        printf("ÁÖ¿ä°ú¸ñÀº %d%% ,", evaluate[1]);
+        printf("¼­ºê°ú¸ñÀº %d%% ,", evaluate[2]);
+        printf("¼ö¸é½Ã°£Àº %d%% ,", evaluate[3]);
+        printf("µ¶¼­½Ã°£Àº %d%% ,", evaluate[4]);
+        printf("½Ä»çÈ½¼öÀº %d%% ,", evaluate[5]);
+        printf("»ç±³½Ã°£Àº %d%% ÀÔ´Ï´Ù ÀÌ¸¦ ÃÑ Á¾ÇÕÇØº» °á°ú.....", evaluate[6]);
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
+        printf("¡Ù ¹ü»ıÀÌ½Ã±º¿ä.¡Ù\n");
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
             return;
     }
     if(3>result){
-        printf("\nìš´ë™ì€ %d%% ,", evaluate[0]);
-        printf("ì£¼ìš”ê³¼ëª©ì€ %d%% ,", evaluate[1]);
-        printf("ì„œë¸Œê³¼ëª©ì€ %d%% ,", evaluate[2]);
-        printf("ìˆ˜ë©´ì‹œê°„ì€ %d%% ,", evaluate[3]);
-        printf("ë…ì„œì‹œê°„ì€ %d%% ,", evaluate[4]);
-        printf("ì‹ì‚¬íšŸìˆ˜ì€ %d%% ,", evaluate[5]);
-        printf("ì‚¬êµì‹œê°„ì€ %d%% ì…ë‹ˆë‹¤ ì´ë¥¼ ì´ ì¢…í•©í•´ë³¸ ê²°ê³¼.....", evaluate[6]);
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
-        printf("â˜† ë¯¸ìƒì…ë‹ˆë‹¤.â˜†\n");
-        printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
+        printf("\n¿îµ¿Àº %d%% ,", evaluate[0]);
+        printf("ÁÖ¿ä°ú¸ñÀº %d%% ,", evaluate[1]);
+        printf("¼­ºê°ú¸ñÀº %d%% ,", evaluate[2]);
+        printf("¼ö¸é½Ã°£Àº %d%% ,", evaluate[3]);
+        printf("µ¶¼­½Ã°£Àº %d%% ,", evaluate[4]);
+        printf("½Ä»çÈ½¼öÀº %d%% ,", evaluate[5]);
+        printf("»ç±³½Ã°£Àº %d%% ÀÔ´Ï´Ù ÀÌ¸¦ ÃÑ Á¾ÇÕÇØº» °á°ú.....", evaluate[6]);
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
+        printf("¡Ù ¹Ì»ıÀÔ´Ï´Ù.¡Ù\n");
+        printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
         return;
     }
     else{
-        printf("ë¯¸ìƒì…ë‹ˆë‹¤ (ë¶ˆê· í˜•í•œ ì‚¶ ì…ë‹ˆë‹¤.)");
+        printf("¹Ì»ıÀÔ´Ï´Ù (ºÒ±ÕÇüÇÑ »î ÀÔ´Ï´Ù.)");
         return;
     }
 }
@@ -84,36 +84,36 @@ void conformDaily(standard *s, daily *d[]){
 void calculatorWeek(daily *d[]){
     int week;
     if(sizeof(*d)/sizeof(daily*)<7){
-        printf("\n7ì´í•˜ì˜ ë°ì´í„° ì¶©ë¶„í•œ ë°ì´í„°ê°€ ëª¨ì´ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n"); 
+        printf("\n7ÀÌÇÏÀÇ µ¥ÀÌÅÍ ÃæºĞÇÑ µ¥ÀÌÅÍ°¡ ¸ğÀÌÁö ¾Ê¾Ò½À´Ï´Ù.\n"); 
         return;
     }
-    printf("\nëª‡ì£¼ì°¨ì˜ ê°“ìƒì„ ì•Œê³ ì‹¶ìœ¼ì‹ ê°€ìš”?");
+    printf("\n¸îÁÖÂ÷ÀÇ °«»ıÀ» ¾Ë°í½ÍÀ¸½Å°¡¿ä?");
     scanf("%d",&week);
     int start = (week-1)*7 ;
     double result;
     for(int i = 0 ; i < 7 ; i++){
         result += d[start+i]->godchecker;
         if(d[start+i]==NULL){
-            printf("ì´ë²ˆ ì£¼ì°¨ì˜ ë°ì´í„°ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.\n");
+            printf("ÀÌ¹ø ÁÖÂ÷ÀÇ µ¥ÀÌÅÍ°¡ ºÎÁ·ÇÕ´Ï´Ù.\n");
             return;
         }
     }
 
     result = result/7;
     if(result>=4.5){
-        printf("ì´ë²ˆì£¼ëŠ” ì´ˆ ê°“ìƒì²˜ëŸ¼ ì‚¬ì…¨êµ°ìš”!!!");
+        printf("ÀÌ¹øÁÖ´Â ÃÊ °«»ıÃ³·³ »ç¼Ì±º¿ä!!!");
         return;
     }
     if(result>=4){
-        printf("ì´ë²ˆì£¼ëŠ” ê°“ìƒì´ë„¤ìš”!");
+        printf("ÀÌ¹øÁÖ´Â °«»ıÀÌ³×¿ä!");
         return;
     }
     if(result>=3){
-        printf("ì´ë²ˆì£¼ëŠ” ë²”ìƒì„ ì‚¬ì…¨ë„¤ìš”.");
+        printf("ÀÌ¹øÁÖ´Â ¹ü»ıÀ» »ç¼Ì³×¿ä.");
         return;
     }
     else{
-        printf("ì´ë²ˆì£¼ëŠ” ë¯¸ìƒì…ë‹ˆë‹¤.");
+        printf("ÀÌ¹øÁÖ´Â ¹Ì»ıÀÔ´Ï´Ù.");
         return;
     }
 }

@@ -108,15 +108,22 @@ void calculatorWeek(daily *d[], int count){
 
     result = result/7;
     if(result>=4.5){
-        printf("이번주는 초 갓생처럼 사셨군요!!!");
+        printf("★★★★★★★★★★★★★★★★★★★\n");
+        printf("★ 이번주는 초 갓생처럼 사셨군요!!! ★\n");
+        printf("★★★★★★★★★★★★★★★★★★★\n");
         return;
     }
     if(result>=4){
+        printf("★★★★★★★★★★★★★\n");
+        printf("★ 이번주는 갓생이네요! ★\n");
+        printf("★★★★★★★★★★★★★\n");
         printf("이번주는 갓생이네요!");
         return;
     }
     if(result>=3){
-        printf("이번주는 범생을 사셨네요.");
+        printf("★★★★★★★★★★★★★★★★\n");
+        printf("★ 이번주는 범생을 사셨네요.  ★\n");
+        printf("★★★★★★★★★★★★★★★★\n");
         return;
     }
     else{

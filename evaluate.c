@@ -31,9 +31,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% \n", evaluate[4]);
         printf("식사횟수은 %d%% \n", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....\n", evaluate[6]);
-        printf("☆☆☆☆☆☆☆☆☆☆\n");
-        printf("☆갓생이군요!! 그럼 기준을 조금 높여보는건 어떨까요?☆\n");
-        printf("☆☆☆☆☆☆☆☆☆☆\n");
+        printf("★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n");
+        printf("★ 갓생이군요!! 그럼 기준을 조금 높여보는건 어떨까요? ★\n");
+        printf("★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n");
         return;
     }
     if(result>=4){
@@ -44,9 +44,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% ,", evaluate[4]);
         printf("식사횟수은 %d%% ,", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....", evaluate[6]);
-        printf("☆☆☆☆☆☆☆☆\n");
-        printf("☆ 갓생이군요 ☆\n");
-        printf("☆☆☆☆☆☆☆☆\n");
+        printf("★★★★★★★★\n");
+        printf("★ 갓생이군요 ★\n");
+        printf("★★★★★★★★\n");
             return;
     }
     if(result>=3){
@@ -57,9 +57,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% ,", evaluate[4]);
         printf("식사횟수은 %d%% ,", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....", evaluate[6]);
-        printf("☆☆☆☆☆☆☆☆☆\n");
-        printf("☆ 범생이시군요.☆\n");
-        printf("☆☆☆☆☆☆☆☆☆\n");
+        printf("★★★★★★★★★\n");
+        printf("★ 범생이시군요.★\n");
+        printf("★★★★★★★★★\n");
             return;
     }
     if(3>result){
@@ -70,9 +70,9 @@ void conformDaily(standard *s, daily *d[]){
         printf("독서시간은 %d%% ,", evaluate[4]);
         printf("식사횟수은 %d%% ,", evaluate[5]);
         printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....", evaluate[6]);
-        printf("☆☆☆☆☆☆☆☆\n");
-        printf("☆ 미생입니다.☆\n");
-        printf("☆☆☆☆☆☆☆☆\n");
+        printf("★★★★★★★★\n");
+        printf("★ 미생입니다.★\n");
+        printf("★★★★★★★★\n");
         return;
     }
     else{
@@ -81,15 +81,22 @@ void conformDaily(standard *s, daily *d[]){
     }
 }
 
-void calculatorWeek(daily *d[]){
+void calculatorWeek(daily *d[], int count){
     int week;
-    if(sizeof(*d)/sizeof(daily*)<7){
+    //if(sizeof(*d)/sizeof(daily)<7){
+      
+            if(count<7){
         printf("\n7이하의 데이터 충분한 데이터가 모이지 않았습니다.\n"); 
         return;
+            
     }
     printf("\n몇주차의 갓생을 알고싶으신가요?");
     scanf("%d",&week);
     int start = (week-1)*7 ;
+    if(start+6>count){
+        printf("\n해당 주의 데이터가 없습니다.\n");
+        return;
+    }
     double result;
     for(int i = 0 ; i < 7 ; i++){
         result += d[start+i]->godchecker;

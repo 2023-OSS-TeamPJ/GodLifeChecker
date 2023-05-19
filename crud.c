@@ -89,7 +89,7 @@ int loadData(standard *s, daily *d[]){
     }
     fclose(fp);
     printf("Loading Complete\n");
-    return i;
+    return i+1;
 
 }
 int calculatorDaily(standard *s, daily *d){

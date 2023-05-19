@@ -3,4 +3,4 @@
 
 void conformDaily(standard *s, daily *d[]);
 
-void calculatorWeek(daily *d[]);
+void calculatorWeek(daily *d[], int count);

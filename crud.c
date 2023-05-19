@@ -73,7 +73,9 @@ int loadData(standard *s, daily *d[]){
         fscanf(fp,"%d",&s->readingTime);
         fscanf(fp,"%d",&s->friendshipTime);
     }
+    fclose(fp);
     fp = fopen("DailyData.txt", "rt");
+    i = 0 ;
     for(; i < 100; i++){
         d[i] = (daily*)malloc(sizeof(daily));
         fscanf(fp,"%d",&d[i]->exerciseTime);

@@ -23,7 +23,7 @@ int main(void) {
     while(1) {
 
         menuNum = menu();
-        
+        printf("%f", sizeof(*myDaily));
         if (menuNum == 1) {
             //갓생 기준 설정/수정하기
             standardChecker(myStandard);

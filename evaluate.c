@@ -84,17 +84,17 @@ void conformDaily(standard *s, daily *d[]){
 void calculatorWeek(daily *d[]){
     int week;
     if(sizeof(*d)/sizeof(daily*)<7){
-        printf("7이하의 데이터 충분한 데이터가 모이지 않았습니다."); 
+        printf("\n7이하의 데이터 충분한 데이터가 모이지 않았습니다.\n"); 
         return;
     }
-    printf("몇주차의 갓생을 알고싶으신가요?");
+    printf("\n몇주차의 갓생을 알고싶으신가요?");
     scanf("%d",&week);
     int start = (week-1)*7 ;
     double result;
     for(int i = 0 ; i < 7 ; i++){
         result += d[start+i]->godchecker;
         if(d[start+i]==NULL){
-            printf("이번 주차의 데이터가 부족합니다.");
+            printf("이번 주차의 데이터가 부족합니다.\n");
             return;
         }
     }

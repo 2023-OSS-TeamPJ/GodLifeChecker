@@ -3,11 +3,18 @@
 #include "evaluate.h"
 
 
-void conformDaily(standard *s, daily *d[]){
+void conformDaily(standard *s, daily *d[], int count){
     int  day;
     int evaluate[7];
-    printf("원하는 날짜는?");
+    printf("\n몇 번째 하루를 평가하시겠습니까? (취소: 0) ");
     scanf("%d",&day);
+
+    if (day == 0) return; 
+    //범위에 벗어난 일자를 입력할 경우 -> 나가기
+    else if (day > count || day < 1){
+        printf("\n해당 일자가 존재하지 않습니다.\n");
+        return;
+    }
 
     evaluate[0]=(d[day-1]->exerciseTime*100/s->exerciseTime);
     evaluate[1]=(d[day-1]->majorStudy*100/s->majorStudy);
@@ -16,9 +23,6 @@ void conformDaily(standard *s, daily *d[]){
     evaluate[4]=(d[day-1]->readingTime*100/s->readingTime);
     evaluate[5]=(d[day-1]->mealCount*100/s->mealCount);
     evaluate[6]=(d[day-1]->friendshipTime*100/s->friendshipTime);
-    /**
-     * 
-    */
 
     int result;
     result = d[day-1]->godchecker;
@@ -83,15 +87,15 @@ void conformDaily(standard *s, daily *d[]){
 
 void calculatorWeek(daily *d[], int count){
     int week;
-    //if(sizeof(*d)/sizeof(daily)<7){
-      
-            if(count<7){
+    if(count<7){
         printf("\n7이하의 데이터 충분한 데이터가 모이지 않았습니다.\n"); 
         return;
             
     }
+    
     printf("\n몇주차의 갓생을 알고싶으신가요?");
     scanf("%d",&week);
+
     int start = (week-1)*7 ;
     if(start+6>count){
         printf("\n해당 주의 데이터가 없습니다.\n");

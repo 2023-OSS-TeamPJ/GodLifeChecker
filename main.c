@@ -50,7 +50,7 @@ int main(void) {
         }
         else if (menuNum == 6 && standardExist != 0) {
             //일별 갓생 평가
-            conformDaily(myStandard, myDaily);
+            conformDaily(myStandard, myDaily, count);
         }
         else if (menuNum == 7 && standardExist != 0) {
             //주별 갓생 평가

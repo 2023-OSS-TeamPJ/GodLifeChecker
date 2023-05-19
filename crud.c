@@ -89,13 +89,13 @@ int loadData(standard *s, daily *d[]){
     }
     fclose(fp);
     printf("Loading Complete\n");
-    return i+1;
+    return i;
 
 }
 int calculatorDaily(standard *s, daily *d){
     int evaluate[7];
     int error=0;
-    double sum;
+    double sum = 0;
     printf("%d\n", s->exerciseTime);
     evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
     printf("\n운동은 %d%% 달성 하였습니다.\n", evaluate[0]);
@@ -116,6 +116,7 @@ int calculatorDaily(standard *s, daily *d){
         break;
         sum+=evaluate[i];
     }
+    
     double average = sum/7;
     if(error==0){
         if(average>=120){
@@ -154,6 +155,7 @@ void addDailyData(standard *s, daily *d[], int count) {
     printf("오늘 하루 사람들과 얼마나 시간을 보내셨나요? ");
     scanf("%d",&d[count]->friendshipTime);
     d[count]->godchecker = calculatorDaily(s, d[count]);
+    printf("godChecker = %d\n", d[count]->godchecker);
 
 }
 
@@ -172,7 +174,7 @@ int deleteDailyData(daily *d[], int count) {
 
 void updateDailyData(daily *d[], int count) {
     int updateNum; //수정일자
-    printf("몇 번째 하루를 수정하고 싶으신가요? (취소: 0) ");
+    printf("\n몇 번째 하루를 수정하고 싶으신가요? (취소: 0) ");
     scanf("%d", &updateNum);
     //취소할 경우 -> 나가기
     if (updateNum== 0) return; 

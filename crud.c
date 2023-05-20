@@ -20,6 +20,7 @@ void standardChecker(standard *s){
     scanf("%d",&s->readingTime);
     printf("당신이 원하는 사교시간은? ");
     scanf("%d",&s->friendshipTime);
+    printf("\n갓생 기준이 입력되었습니다!\n");
 }
 int menu(){
     int select;
@@ -51,7 +52,7 @@ void saveData(standard *s, daily *d[], int count){
         fprintf(fp," %d %d %d %d %d %d %d %d\n", d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime, d[i]->godchecker);
     }
     fclose(fp);
-    printf("SAVE!!\n");
+    printf("\n저장되었습니다!\n");
 
 }
 
@@ -60,7 +61,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
     FILE *fp;
     fp = fopen("standardText.txt", "rt");
     if(fp==NULL){
-        printf("Data is null \n");
+        printf("불러올 데이터가 없습니다\n");
         return 0;
     }
     for(; i < 100; i++){
@@ -90,7 +91,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
         fscanf(fp,"%d",&d[i]->godchecker);
     }
     fclose(fp);
-    printf("Loading Complete\n");
+    printf("데이터를 로딩완료 하였습니다!\n");
     return i;
 
 }
@@ -101,19 +102,19 @@ int calculatorDaily(standard *s, daily *d){
     double sum=0.0;
 
     evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
-    printf("\n운동은 %d%% 달성 하였습니다.\n", evaluate[0]);
+    printf("\n운동 목표량은 %d%% 달성 하였습니다\n", evaluate[0]);
     evaluate[1]=(d->majorStudy*100/s->majorStudy);
-    printf("주요과목은 %d%% 달성 하였습니다.\n", evaluate[1]);
+    printf("전공공부 목표량은 %d%% 달성 하였습니다\n", evaluate[1]);
     evaluate[2]=(d->otherStudy*100/s->otherStudy);
-    printf("서브과목은 %d%% 달성 하였습니다.\n", evaluate[2]);
+    printf("전공 외 공부 목표량은 %d%% 달성 하였습니다\n", evaluate[2]);
     evaluate[3]=(d->sleepTime*100/s->sleepTime);
-    printf("수면시간은 %d%% 달성 하였습니다.\n", evaluate[3]);
+    printf("수면시간 목표량은 %d%% 달성 하였습니다\n", evaluate[3]);
     evaluate[4]=(d->readingTime*100/s->readingTime);
-    printf("독서시간은 %d%% 달성 하였습니다.\n", evaluate[4]);
+    printf("독서시간 목표량은 %d%% 달성 하였습니다\n", evaluate[4]);
     evaluate[5]=(d->mealCount*100/s->mealCount);
-    printf("식사횟수은 %d%% 달성 하였습니다.\n", evaluate[5]);
+    printf("식사횟수 목표량은 %d%% 달성 하였습니다\n", evaluate[5]);
     evaluate[6]=(d->friendshipTime*100/s->friendshipTime);
-    printf("사교시간은 %d%% 달성 하였습니다.\n", evaluate[6]);
+    printf("사교시간 목표량은 %d%% 달성 하였습니다\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) {
             error=1;
@@ -160,8 +161,7 @@ void addDailyData(standard *s, daily *d[], int count) {
     printf("오늘 하루 사람들과 얼마나 시간을 보내셨나요? ");
     scanf("%d",&d[count]->friendshipTime);
     d[count]->godchecker = calculatorDaily(s, d[count]);
-    printf("godChecker = %d\n", d[count]->godchecker);
-
+    printf("\n입력이 완료되었습니다!\n");
 }
 
 int deleteDailyData(daily *d[], int count) {
@@ -169,7 +169,7 @@ int deleteDailyData(daily *d[], int count) {
 
     //데이터가 없으면
     if (count == 0) {
-        printf("\n현재 존재하는 데이터가 없습니다.\n");
+        printf("\n현재 존재하는 데이터가 없습니다\n");
         return 0;
     }
 
@@ -189,7 +189,7 @@ void updateDailyData(daily *d[], int count) {
 
     //데이터가 없으면
     if (count == 0) {
-        printf("\n현재 존재하는 데이터가 없습니다.\n");
+        printf("\n현재 존재하는 데이터가 없습니다\n");
         return;
     }
 
@@ -199,7 +199,7 @@ void updateDailyData(daily *d[], int count) {
     if (updateNum== 0) return; 
     //범위에 벗어난 일자를 입력할 경우 -> 나가기
     else if (updateNum > count || updateNum < 1){
-        printf("\n해당 일자가 존재하지 않습니다.\n");
+        printf("\n해당 일자가 존재하지 않습니다\n");
         return;
     }
     else {
@@ -231,7 +231,7 @@ void showDailyData(daily *d[], int count) {
 
     //데이터가 없으면
     if (count == 0) {
-        printf("\n현재 존재하는 데이터가 없습니다.\n");
+        printf("\n현재 존재하는 데이터가 없습니다\n");
         return;
     }
 
@@ -242,7 +242,7 @@ void showDailyData(daily *d[], int count) {
         for(int i=0; i<count; i++) {
             printf("\n%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
             printf("-----------------------------------------\n");
-            printf("운동    전공공부  기타공부      수면  식사횟수  독서  사교\n");
+            printf(" 운동   전공공부  기타공부      수면   식사횟수  독서   사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
             d[i]->sleepTime, d[i]->mealCount, d[i]->readingTime, d[i]->friendshipTime);
             printf("-----------------------------------------\n");
@@ -250,13 +250,13 @@ void showDailyData(daily *d[], int count) {
     }
     //범위에 벗어난 일자를 입력할 경우 -> 나가기
     else if (searchNum > count || searchNum < 1){
-        printf("\n해당 일자가 존재하지 않습니다.\n");
+        printf("\n해당 일자가 존재하지 않습니다\n");
     }
     else {
             searchNum = searchNum-1;
             printf("\n%d 일차 갓생점수: %d\n", searchNum+1, d[searchNum]->godchecker);
             printf("-----------------------------------------\n");
-            printf("운동    전공공부  기타공부      수면  식사횟수  독서  사교\n");
+            printf(" 운동   전공공부  기타공부      수면   식사횟수  독서   사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 
             d[searchNum]->sleepTime, d[searchNum]->mealCount, d[searchNum]->readingTime, d[searchNum]->friendshipTime);
             printf("-----------------------------------------\n\n");

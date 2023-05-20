@@ -12,7 +12,7 @@ void conformDaily(standard *s, daily *d[], int count){
         printf("\n현재 존재하는 데이터가 없습니다\n");
         return;
     }
-    
+
     printf("\n몇 번째 하루를 평가하시겠습니까? (취소: 0) ");
     scanf("%d",&day);
 
@@ -87,7 +87,7 @@ void conformDaily(standard *s, daily *d[], int count){
         return;
     }
     else{
-        printf("\n* 아쉽게도 미생입니다. 기준을 조금 낮춰 보는건 어떨까요? (불균형한 삶 입니다.)\n");
+        printf("\n* 아쉽게도 미생입니다. 기준을 조금 낮춰 보는건 어떨까요? (불균형한 삶 입니다)\n");
         return;
     }
 }
@@ -95,24 +95,24 @@ void conformDaily(standard *s, daily *d[], int count){
 void calculatorWeek(daily *d[], int count){
     int week;
     if(count<7){
-        printf("\n일주일치의 데이터가 충분히 모이지 않았습니다.\n"); 
+        printf("\n일주일치의 데이터가 충분히 모이지 않았습니다\n"); 
         return;
             
     }
     
-    printf("\n몇주차의 갓생을 알고싶으신가요?");
+    printf("\n몇주차의 갓생을 알고싶으신가요? ");
     scanf("%d",&week);
 
     int start = (week-1)*7 ;
     if(start+6>count){
-        printf("\n해당 주의 데이터가 없습니다.\n");
+        printf("\n해당 주의 데이터가 없습니다\n");
         return;
     }
     double result;
     for(int i = 0 ; i < 7 ; i++){
         result += d[start+i]->godchecker;
         if(d[start+i]==NULL){
-            printf("이번 주차의 데이터가 부족합니다.\n");
+            printf("이번 주차의 데이터가 부족합니다\n");
             return;
         }
     }

@@ -87,7 +87,16 @@ void conformDaily(standard *s, daily *d[], int count){
         return;
     }
     else{
+        printf("\n운동은 %d%% \n", evaluate[0]);
+        printf("주요과목은 %d%% \n", evaluate[1]);
+        printf("서브과목은 %d%% \n", evaluate[2]);
+        printf("수면시간은 %d%% \n", evaluate[3]);
+        printf("독서시간은 %d%% \n", evaluate[4]);
+        printf("식사횟수은 %d%% \n", evaluate[5]);
+        printf("사교시간은 %d%% 입니다 이를 총 종합해본 결과.....\n", evaluate[6]);
+        printf("*********************************************************\n");
         printf("\n* 아쉽게도 미생입니다. 기준을 조금 낮춰 보는건 어떨까요? (불균형한 삶 입니다)\n");
+        printf("*********************************************************\n");
         return;
     }
 }

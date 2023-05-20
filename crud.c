@@ -300,7 +300,7 @@ void refreshEvalutation(standard *s, daily *d[], int count) {
                 else if((average<100)&&(average>=80)){
                     d[i]->godchecker = 3;
                 }
-                else if(80>average){
+                else {
                     d[i]->godchecker = 2;
                 }
             }

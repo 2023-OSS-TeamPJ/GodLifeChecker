@@ -73,7 +73,7 @@ void conformDaily(standard *s, daily *d[], int count){
         printf("****************\n");
             return;
     }
-    if(3>result){
+    if(3>result && result > 0){
         printf("\n운동은 %d%% \n", evaluate[0]);
         printf("주요과목은 %d%% \n", evaluate[1]);
         printf("서브과목은 %d%% \n", evaluate[2]);

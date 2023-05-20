@@ -114,39 +114,35 @@ void calculatorWeek(daily *d[], int count){
 
     int start = (week-1)*7 ;
     if(start+6>count){
-        printf("\n해당 주의 데이터가 없습니다\n");
+        printf("\n해당 주차의 데이터가 부족합니다\n");
         return;
     }
     double result;
     for(int i = 0 ; i < 7 ; i++){
         result += d[start+i]->godchecker;
-        if(d[start+i]==NULL){
-            printf("이번 주차의 데이터가 부족합니다\n");
-            return;
-        }
     }
 
     result = result/7;
     if(result>=4.5){
         printf("\n************************************************************\n");
-        printf("* 이번주는 갓생이군요!! 그럼 기준을 조금 높여보는건 어떨까요? *\n");
+        printf("* %d 주차는 갓생이군요!! 그럼 기준을 조금 높여보는건 어떨까요? *\n", week);
         printf("************************************************************\n");
         return;
     }
     if(result>=4){
         printf("\n***********************\n");
-        printf("* 이번주는 갓생이네요! *\n");
+        printf("* %d 주차는 갓생이네요! *\n", week);
         printf("***********************\n");
         return;
     }
     if(result>=3){
         printf("\n***************************\n");
-        printf("* 이번주는 범생을 사셨네요. *\n");
+        printf("* %d 주차는 범생을 사셨네요. *\n", week);
         printf("***************************\n");
         return;
     }
     else{
-        printf("* 이번주는 아쉽게도 미생입니다. 기준을 조금 낮춰 보는건 어떨까요?");
+        printf("* %d 주차는 아쉽게도 미생입니다. 기준을 조금 낮춰 보는건 어떨까요?\n", week);
         return;
     }
 }

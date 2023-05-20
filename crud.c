@@ -5,36 +5,36 @@
 
 void standardChecker(standard *s){
     getchar();
-    printf("\n*ëª¨ë“  ì‹œê°„ì€ ë¶„ ë‹¨ìœ„ë¡œ ì ì–´ì£¼ì‹­ì‹œì˜¤*\n");
-    printf("\në‹¹ì‹ ì´ ì›í•˜ëŠ” ìš´ë™ ì‹œê°„ì€? ");
+    printf("\n*¸ğµç ½Ã°£Àº ºĞ ´ÜÀ§·Î Àû¾îÁÖ½Ê½Ã¿À*\n");
+    printf("\n´ç½ÅÀÌ ¿øÇÏ´Â ¿îµ¿ ½Ã°£Àº? ");
     scanf("%d",&s->exerciseTime);
-    printf("ë‹¹ì‹ ì´ ì›í•˜ëŠ” ì „ê³µê³µë¶€ ì‹œê°„ì€? ");
+    printf("´ç½ÅÀÌ ¿øÇÏ´Â Àü°ø°øºÎ ½Ã°£Àº? ");
     scanf("%d",&s->majorStudy);
-    printf("ë‹¹ì‹ ì´ ì›í•˜ëŠ” ì „ê³µ ì™¸ ê³µë¶€ ì‹œê°„ì€? ");
+    printf("´ç½ÅÀÌ ¿øÇÏ´Â Àü°ø ¿Ü °øºÎ ½Ã°£Àº? ");
     scanf("%d",&s->otherStudy);
-    printf("ë‹¹ì‹ ì´ ì›í•˜ëŠ” ìˆ˜ë©´ ì‹œê°„ì€? ");
+    printf("´ç½ÅÀÌ ¿øÇÏ´Â ¼ö¸é ½Ã°£Àº? ");
     scanf("%d",&s->sleepTime);
-    printf("ë‹¹ì‹ ì´ ì›í•˜ëŠ” ì‹ì‚¬ íšŸìˆ˜ëŠ”? ");
+    printf("´ç½ÅÀÌ ¿øÇÏ´Â ½Ä»ç È½¼ö´Â? ");
     scanf("%d",&s->mealCount);
-    printf("ë‹¹ì‹ ì´ ì›í•˜ëŠ” ë…ì„œì‹œê°„ì€? ");
+    printf("´ç½ÅÀÌ ¿øÇÏ´Â µ¶¼­½Ã°£Àº? ");
     scanf("%d",&s->readingTime);
-    printf("ë‹¹ì‹ ì´ ì›í•˜ëŠ” ì‚¬êµì‹œê°„ì€? ");
+    printf("´ç½ÅÀÌ ¿øÇÏ´Â »ç±³½Ã°£Àº? ");
     scanf("%d",&s->friendshipTime);
-    printf("\nê°“ìƒ ê¸°ì¤€ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
+    printf("\n°«»ı ±âÁØÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù!\n");
 }
 int menu(){
     int select;
-    printf("\n===========ë©”ë‰´============\n");
-    printf("1. ë‚˜ì˜ ê°“ìƒ ê¸°ì¤€ ì„¤ì •/ìˆ˜ì •\n");
-    printf("2. ì˜¤ëŠ˜ ì–¼ë§ˆë‚˜ í•˜ì…¨ë‚˜ìš”?\n");
-    printf("3. ì „ì²´ ê°“ìƒë°ì´í„°ë¥¼ ì‚­ì œ!\n");
-    printf("4. ì›í•˜ëŠ” ë‚ ì§œì˜ ê°“ìƒë°ì´í„°ë¥¼ ìˆ˜ì •í•´ ë³´ì!\n");
-    printf("5. ì›í•˜ëŠ” ë‚ ì§œì˜ ê°“ìƒì„ í™•ì¸í•´ë³´ì!\n");
-    printf("6. ì¼ì¼ë‚ ì§œì˜ ê°“ìƒì„ í‰ê°€í•´ë³´ì!\n");
-    printf("7. ì£¼ê°„ ê°“ìƒì„ í‰ê°€í•´ë³´ì!\n");    
-    printf("8. ì €ì¥!\n");
-    printf("0. ë‚˜ê°€ê¸°\n");    
-    printf("ì›í•˜ëŠ” ë©”ë‰´ëŠ”? => ");
+    printf("\n===========¸Ş´º============\n");
+    printf("1. ³ªÀÇ °«»ı ±âÁØ ¼³Á¤/¼öÁ¤\n");
+    printf("2. ¿À´Ã ¾ó¸¶³ª ÇÏ¼Ì³ª¿ä?\n");
+    printf("3. ÀüÃ¼ °«»ıµ¥ÀÌÅÍ¸¦ »èÁ¦!\n");
+    printf("4. ¿øÇÏ´Â ³¯Â¥ÀÇ °«»ıµ¥ÀÌÅÍ¸¦ ¼öÁ¤ÇØ º¸ÀÚ!\n");
+    printf("5. ¿øÇÏ´Â ³¯Â¥ÀÇ °«»ıÀ» È®ÀÎÇØº¸ÀÚ!\n");
+    printf("6. ÀÏÀÏ³¯Â¥ÀÇ °«»ıÀ» Æò°¡ÇØº¸ÀÚ!\n");
+    printf("7. ÁÖ°£ °«»ıÀ» Æò°¡ÇØº¸ÀÚ!\n");    
+    printf("8. ÀúÀå!\n");
+    printf("0. ³ª°¡±â\n");    
+    printf("¿øÇÏ´Â ¸Ş´º´Â? => ");
     scanf("%d",&select);
     return select;
 }
@@ -52,7 +52,7 @@ void saveData(standard *s, daily *d[], int count){
         fprintf(fp," %d %d %d %d %d %d %d %d\n", d[i]->exerciseTime,d[i]->majorStudy, d[i]->otherStudy,d[i]->sleepTime, d[i]->mealCount,d[i]->readingTime,d[i]->friendshipTime, d[i]->godchecker);
     }
     fclose(fp);
-    printf("\nì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
+    printf("\nÀúÀåµÇ¾ú½À´Ï´Ù!\n");
 
 }
 
@@ -61,7 +61,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
     FILE *fp;
     fp = fopen("standardText.txt", "rt");
     if(fp==NULL){
-        printf("ë¶ˆëŸ¬ì˜¬ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤\n");
+        printf("ºÒ·¯¿Ã µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù\n");
         return 0;
     }
     for(; i < 100; i++){
@@ -73,7 +73,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
         fscanf(fp,"%d",&s->mealCount);
         fscanf(fp,"%d",&s->readingTime);
         fscanf(fp,"%d",&s->friendshipTime);
-        *standardExist = 1; //ê¸°ì¤€ ì¡´ì¬ì—¬ë¶€
+        *standardExist = 1; //±âÁØ Á¸Àç¿©ºÎ
     }
     fclose(fp);
     fp = fopen("DailyData.txt", "rt");
@@ -91,7 +91,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
         fscanf(fp,"%d",&d[i]->godchecker);
     }
     fclose(fp);
-    printf("ë°ì´í„°ë¥¼ ë¡œë”©ì™„ë£Œ í•˜ì˜€ìŠµë‹ˆë‹¤!\n");
+    printf("µ¥ÀÌÅÍ¸¦ ·Îµù¿Ï·á ÇÏ¿´½À´Ï´Ù!\n");
     return i;
 
 }
@@ -102,19 +102,19 @@ int calculatorDaily(standard *s, daily *d){
     double sum=0.0;
 
     evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
-    printf("\nìš´ë™ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[0]);
+    printf("\n¿îµ¿ ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[0]);
     evaluate[1]=(d->majorStudy*100/s->majorStudy);
-    printf("ì „ê³µê³µë¶€ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[1]);
+    printf("Àü°ø°øºÎ ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[1]);
     evaluate[2]=(d->otherStudy*100/s->otherStudy);
-    printf("ì „ê³µ ì™¸ ê³µë¶€ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[2]);
+    printf("Àü°ø ¿Ü °øºÎ ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[2]);
     evaluate[3]=(d->sleepTime*100/s->sleepTime);
-    printf("ìˆ˜ë©´ì‹œê°„ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[3]);
+    printf("¼ö¸é½Ã°£ ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[3]);
     evaluate[4]=(d->readingTime*100/s->readingTime);
-    printf("ë…ì„œì‹œê°„ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[4]);
+    printf("µ¶¼­½Ã°£ ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[4]);
     evaluate[5]=(d->mealCount*100/s->mealCount);
-    printf("ì‹ì‚¬íšŸìˆ˜ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[5]);
+    printf("½Ä»çÈ½¼ö ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[5]);
     evaluate[6]=(d->friendshipTime*100/s->friendshipTime);
-    printf("ì‚¬êµì‹œê°„ ëª©í‘œëŸ‰ì€ %d%% ë‹¬ì„± í•˜ì˜€ìŠµë‹ˆë‹¤\n", evaluate[6]);
+    printf("»ç±³½Ã°£ ¸ñÇ¥·®Àº %d%% ´Ş¼º ÇÏ¿´½À´Ï´Ù\n", evaluate[6]);
     for(int i = 0 ; i < 7 ; i ++){
         if(evaluate[i]<50) {
             error=1;
@@ -143,134 +143,134 @@ int calculatorDaily(standard *s, daily *d){
 }
 
 void addDailyData(standard *s, daily *d[], int count) {
-    printf("\nì‚¬ìš©ìë‹˜ì´ %d ì¼ì§¸ì— í• ë‹¹í•œ ì‹œê°„ì„ ê° í•­ëª©ë³„ë¡œ ì…ë ¥ë°›ê² ìŠµë‹ˆë‹¤\n", count+1);
-    printf("*ëª¨ë“  ì‹œê°„ì€ ë¶„ ë‹¨ìœ„ë¡œ ì ì–´ì£¼ì‹­ì‹œì˜¤*\n");
+    printf("\n»ç¿ëÀÚ´ÔÀÌ %d ÀÏÂ°¿¡ ÇÒ´çÇÑ ½Ã°£À» °¢ Ç×¸ñº°·Î ÀÔ·Â¹Ş°Ú½À´Ï´Ù\n", count+1);
+    printf("*¸ğµç ½Ã°£Àº ºĞ ´ÜÀ§·Î Àû¾îÁÖ½Ê½Ã¿À*\n");
     printf("-----------------------------------\n\n");
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ìš´ë™ì— íˆ¬ìí•œ ì‹œê°„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+    printf("¿À´Ã ÇÏ·ç ¿îµ¿¿¡ ÅõÀÚÇÑ ½Ã°£À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
     scanf("%d",&d[count]->exerciseTime);
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ìš´ë™ì— ì „ê³µê³µë¶€ì— íˆ¬ìí•œ ì‹œê°„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+    printf("¿À´Ã ÇÏ·ç ¿îµ¿¿¡ Àü°ø°øºÎ¿¡ ÅõÀÚÇÑ ½Ã°£À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
     scanf("%d",&d[count]->majorStudy);
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ì „ê³µ ì™¸ ê³µë¶€ì— íˆ¬ìí•œ ì–¼ë§ˆë‚˜ íˆ¬ìí•˜ì…¨ë‚˜ìš”? ");
+    printf("¿À´Ã ÇÏ·ç Àü°ø ¿Ü °øºÎ¿¡ ÅõÀÚÇÑ ¾ó¸¶³ª ÅõÀÚÇÏ¼Ì³ª¿ä? ");
     scanf("%d",&d[count]->otherStudy);
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ì–¼ë§ˆë‚˜ ì£¼ë¬´ì…¨ë‚˜ìš”? ");
+    printf("¿À´Ã ÇÏ·ç ¾ó¸¶³ª ÁÖ¹«¼Ì³ª¿ä? ");
     scanf("%d",&d[count]->sleepTime);
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ëª‡ ë¼ë¥¼ ë“œì…¨ë‚˜ìš”? ");
+    printf("¿À´Ã ÇÏ·ç ¸î ³¢¸¦ µå¼Ì³ª¿ä? ");
     scanf("%d",&d[count]->mealCount);
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ì±…ì„ ì–¼ë§ˆë‚˜ ì½ìœ¼ì…¨ë‚˜ìš”? ");
+    printf("¿À´Ã ÇÏ·ç Ã¥À» ¾ó¸¶³ª ÀĞÀ¸¼Ì³ª¿ä? ");
     scanf("%d",&d[count]->readingTime);
-    printf("ì˜¤ëŠ˜ í•˜ë£¨ ì‚¬ëŒë“¤ê³¼ ì–¼ë§ˆë‚˜ ì‹œê°„ì„ ë³´ë‚´ì…¨ë‚˜ìš”? ");
+    printf("¿À´Ã ÇÏ·ç »ç¶÷µé°ú ¾ó¸¶³ª ½Ã°£À» º¸³»¼Ì³ª¿ä? ");
     scanf("%d",&d[count]->friendshipTime);
     d[count]->godchecker = calculatorDaily(s, d[count]);
-    printf("\nì…ë ¥ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!\n");
+    printf("\nÀÔ·ÂÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù!\n");
 }
 
 int deleteDailyData(daily *d[], int count) {
     int choice;
 
-    //ë°ì´í„°ê°€ ì—†ìœ¼ë©´
+    //µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é
     if (count == 0) {
-        printf("\ní˜„ì¬ ì¡´ì¬í•˜ëŠ” ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤\n");
+        printf("\nÇöÀç Á¸ÀçÇÏ´Â µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù\n");
         return 0;
     }
 
-    printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ: 1)");
+    printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦: 1)");
     scanf("%d", &choice);
     if (choice != 1) return 0;
-    //ë°ì´í„° ì „ì²´ì‚­ì œ
+    //µ¥ÀÌÅÍ ÀüÃ¼»èÁ¦
     for (int i=count; i>=0; i--) {
         free(d[i]);
     }
-    printf("\në°ì´í„°ê°€ ëª¨ë‘ ì‚­ì œ ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
+    printf("\nµ¥ÀÌÅÍ°¡ ¸ğµÎ »èÁ¦ µÇ¾ú½À´Ï´Ù!\n");
     return 1;
 }
 
 void updateDailyData(daily *d[], int count) {
-    int updateNum; //ìˆ˜ì •ì¼ì
+    int updateNum; //¼öÁ¤ÀÏÀÚ
 
-    //ë°ì´í„°ê°€ ì—†ìœ¼ë©´
+    //µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é
     if (count == 0) {
-        printf("\ní˜„ì¬ ì¡´ì¬í•˜ëŠ” ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤\n");
+        printf("\nÇöÀç Á¸ÀçÇÏ´Â µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù\n");
         return;
     }
 
-    printf("\nëª‡ ë²ˆì§¸ í•˜ë£¨ë¥¼ ìˆ˜ì •í•˜ê³  ì‹¶ìœ¼ì‹ ê°€ìš”? (ì·¨ì†Œ: 0) ");
+    printf("\n¸î ¹øÂ° ÇÏ·ç¸¦ ¼öÁ¤ÇÏ°í ½ÍÀ¸½Å°¡¿ä? (Ãë¼Ò: 0) ");
     scanf("%d", &updateNum);
-    //ì·¨ì†Œí•  ê²½ìš° -> ë‚˜ê°€ê¸°
+    //Ãë¼ÒÇÒ °æ¿ì -> ³ª°¡±â
     if (updateNum== 0) return; 
-    //ë²”ìœ„ì— ë²—ì–´ë‚œ ì¼ìë¥¼ ì…ë ¥í•  ê²½ìš° -> ë‚˜ê°€ê¸°
+    //¹üÀ§¿¡ ¹ş¾î³­ ÀÏÀÚ¸¦ ÀÔ·ÂÇÒ °æ¿ì -> ³ª°¡±â
     else if (updateNum > count || updateNum < 1){
-        printf("\ní•´ë‹¹ ì¼ìê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤\n");
+        printf("\nÇØ´ç ÀÏÀÚ°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù\n");
         return;
     }
     else {
-        //ìˆ˜ì •í•˜ê¸°
-        printf("\nì‚¬ìš©ìë‹˜ì´ %d ì¼ì§¸ì— í• ë‹¹í•œ ì‹œê°„ì„ ê° í•­ëª©ë³„ë¡œ ìˆ˜ì •í•˜ê² ìŠµë‹ˆë‹¤\n", updateNum);
-        printf("*ëª¨ë“  ì‹œê°„ì€ ë¶„ ë‹¨ìœ„ë¡œ ì ì–´ì£¼ì‹­ì‹œì˜¤*\n");
+        //¼öÁ¤ÇÏ±â
+        printf("\n»ç¿ëÀÚ´ÔÀÌ %d ÀÏÂ°¿¡ ÇÒ´çÇÑ ½Ã°£À» °¢ Ç×¸ñº°·Î ¼öÁ¤ÇÏ°Ú½À´Ï´Ù\n", updateNum);
+        printf("*¸ğµç ½Ã°£Àº ºĞ ´ÜÀ§·Î Àû¾îÁÖ½Ê½Ã¿À*\n");
         printf("-----------------------------------\n\n");
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ìš´ë™ì— íˆ¬ìí•œ ì‹œê°„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+        printf("¿À´Ã ÇÏ·ç ¿îµ¿¿¡ ÅõÀÚÇÑ ½Ã°£À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
         scanf("%d",&d[updateNum-1]->exerciseTime);
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ìš´ë™ì— ì „ê³µê³µë¶€ì— íˆ¬ìí•œ ì‹œê°„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+        printf("¿À´Ã ÇÏ·ç ¿îµ¿¿¡ Àü°ø°øºÎ¿¡ ÅõÀÚÇÑ ½Ã°£À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
         scanf("%d",&d[updateNum-1]->majorStudy);
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ì „ê³µ ì™¸ ê³µë¶€ì— íˆ¬ìí•œ ì–¼ë§ˆë‚˜ íˆ¬ìí•˜ì…¨ë‚˜ìš”? ");
+        printf("¿À´Ã ÇÏ·ç Àü°ø ¿Ü °øºÎ¿¡ ÅõÀÚÇÑ ¾ó¸¶³ª ÅõÀÚÇÏ¼Ì³ª¿ä? ");
         scanf("%d",&d[updateNum-1]->otherStudy);
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ì–¼ë§ˆë‚˜ ì£¼ë¬´ì…¨ë‚˜ìš”? ");
+        printf("¿À´Ã ÇÏ·ç ¾ó¸¶³ª ÁÖ¹«¼Ì³ª¿ä? ");
         scanf("%d",&d[updateNum-1]->sleepTime);
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ëª‡ ë¼ë¥¼ ë“œì…¨ë‚˜ìš”? ");
+        printf("¿À´Ã ÇÏ·ç ¸î ³¢¸¦ µå¼Ì³ª¿ä? ");
         scanf("%d",&d[updateNum-1]->mealCount);
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ì±…ì„ ì–¼ë§ˆë‚˜ ì½ìœ¼ì…¨ë‚˜ìš”? ");
+        printf("¿À´Ã ÇÏ·ç Ã¥À» ¾ó¸¶³ª ÀĞÀ¸¼Ì³ª¿ä? ");
         scanf("%d",&d[updateNum-1]->readingTime);
-        printf("ì˜¤ëŠ˜ í•˜ë£¨ ì‚¬ëŒë“¤ê³¼ ì–¼ë§ˆë‚˜ ì‹œê°„ì„ ë³´ë‚´ì…¨ë‚˜ìš”? ");
+        printf("¿À´Ã ÇÏ·ç »ç¶÷µé°ú ¾ó¸¶³ª ½Ã°£À» º¸³»¼Ì³ª¿ä? ");
         scanf("%d",&d[updateNum-1]->friendshipTime);
 
-        printf("\nìˆ˜ì •ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
+        printf("\n¼öÁ¤ÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù!\n");
     }
 }
 
 void showDailyData(daily *d[], int count) {
-    int searchNum; //ì¶œë ¥í•˜ê³  ì‹¶ì€ ì¼ì
+    int searchNum; //Ãâ·ÂÇÏ°í ½ÍÀº ÀÏÀÚ
 
-    //ë°ì´í„°ê°€ ì—†ìœ¼ë©´
+    //µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é
     if (count == 0) {
-        printf("\ní˜„ì¬ ì¡´ì¬í•˜ëŠ” ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤\n");
+        printf("\nÇöÀç Á¸ÀçÇÏ´Â µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù\n");
         return;
     }
 
-    printf("\nëª‡ ë²ˆì§¸ í•˜ë£¨ë¥¼ ë³´ê³  ì‹¶ìœ¼ì‹ ê°€ìš”? (ì „ì²´ë³´ê¸°: 0) ");
+    printf("\n¸î ¹øÂ° ÇÏ·ç¸¦ º¸°í ½ÍÀ¸½Å°¡¿ä? (ÀüÃ¼º¸±â: 0) ");
     scanf("%d", &searchNum);
-    //ì·¨ì†Œí•  ê²½ìš° -> ë‚˜ê°€ê¸°
+    //Ãë¼ÒÇÒ °æ¿ì -> ³ª°¡±â
     if (searchNum== 0) {
         for(int i=0; i<count; i++) {
-            printf("\n%d ì¼ì°¨ í• ë‹¹ì‹œê°„(ë¶„)\n", i+1);
+            printf("\n%d ÀÏÂ÷ ÇÒ´ç½Ã°£(ºĞ)\n", i+1);
             printf("------------------------------------------------------------\n");
-            printf(" ìš´ë™   ì „ê³µê³µë¶€  ê¸°íƒ€ê³µë¶€      ìˆ˜ë©´   ì‹ì‚¬íšŸìˆ˜  ë…ì„œ   ì‚¬êµ\n");
+            printf(" ¿îµ¿   Àü°ø°øºÎ  ±âÅ¸°øºÎ      ¼ö¸é   ½Ä»çÈ½¼ö  µ¶¼­   »ç±³\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
             d[i]->sleepTime, d[i]->mealCount, d[i]->readingTime, d[i]->friendshipTime);
             printf("------------------------------------------------------------\n");
         }
     }
-    //ë²”ìœ„ì— ë²—ì–´ë‚œ ì¼ìë¥¼ ì…ë ¥í•  ê²½ìš° -> ë‚˜ê°€ê¸°
+    //¹üÀ§¿¡ ¹ş¾î³­ ÀÏÀÚ¸¦ ÀÔ·ÂÇÒ °æ¿ì -> ³ª°¡±â
     else if (searchNum > count || searchNum < 1){
-        printf("\ní•´ë‹¹ ì¼ìê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤\n");
+        printf("\nÇØ´ç ÀÏÀÚ°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù\n");
     }
     else {
             searchNum = searchNum-1;
-            printf("\n%d ì¼ì°¨ í• ë‹¹ì‹œê°„(ë¶„)\n", searchNum+1);
+            printf("\n%d ÀÏÂ÷ ÇÒ´ç½Ã°£(ºĞ)\n", searchNum+1);
             printf("------------------------------------------------------------\n");
-            printf(" ìš´ë™   ì „ê³µê³µë¶€  ê¸°íƒ€ê³µë¶€      ìˆ˜ë©´   ì‹ì‚¬íšŸìˆ˜  ë…ì„œ   ì‚¬êµ\n");
+            printf(" ¿îµ¿   Àü°ø°øºÎ  ±âÅ¸°øºÎ      ¼ö¸é   ½Ä»çÈ½¼ö  µ¶¼­   »ç±³\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 
             d[searchNum]->sleepTime, d[searchNum]->mealCount, d[searchNum]->readingTime, d[searchNum]->friendshipTime);
             printf("------------------------------------------------------------\n\n");
     }
 }
-//í‰ê°€ ë°ì´í„° ì—…ë°ì´íŠ¸ í•¨ìˆ˜
+//Æò°¡ µ¥ÀÌÅÍ ¾÷µ¥ÀÌÆ® ÇÔ¼ö
 void refreshEvalutation(standard *s, daily *d[], int count) {
         int evaluate[7];
         int error;
         double average = 0.0;
         double sum = 0.0;
-        //ì „ì²´ ë°ì´í„° ê³„ì‚°
+        //ÀüÃ¼ µ¥ÀÌÅÍ °è»ê
         for (int i=0; i<count; i++){
-            error = 0; //error ì´ˆê¸°í™”
+            error = 0; //error ÃÊ±âÈ­
             evaluate[0]=(d[i]->exerciseTime*100/s->exerciseTime);
             evaluate[1]=(d[i]->majorStudy*100/s->majorStudy);
             evaluate[2]=(d[i]->otherStudy*100/s->otherStudy);
@@ -289,7 +289,7 @@ void refreshEvalutation(standard *s, daily *d[], int count) {
 
             
             average = sum/7;
-            //godchecker ì—…ë°ì´íŠ¸
+            //godchecker ¾÷µ¥ÀÌÆ®
             if(error==0){
                 if(average>=120){
                     d[i]->godchecker = 5;

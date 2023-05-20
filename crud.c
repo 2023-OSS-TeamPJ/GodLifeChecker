@@ -90,7 +90,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
         fscanf(fp,"%d",&d[i]->godchecker);
     }
     fclose(fp);
-    printf("\nLoading Complete\n");
+    printf("Loading Complete\n");
     return i;
 
 }

@@ -61,7 +61,7 @@ int loadData(standard *s, daily *d[], int *standardExist){
     FILE *fp;
     fp = fopen("standardText.txt", "rt");
     if(fp==NULL){
-        printf("Data is null \n");
+        printf("불러올 데이터가 없습니다\n");
         return 0;
     }
     for(; i < 100; i++){

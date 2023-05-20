@@ -240,12 +240,12 @@ void showDailyData(daily *d[], int count) {
     //취소할 경우 -> 나가기
     if (searchNum== 0) {
         for(int i=0; i<count; i++) {
-            printf("\n%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
-            printf("-----------------------------------------\n");
+            printf("\n%d 일차 할당시간(분)\n", i+1);
+            printf("------------------------------------------------------------\n");
             printf(" 운동   전공공부  기타공부      수면   식사횟수  독서   사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
             d[i]->sleepTime, d[i]->mealCount, d[i]->readingTime, d[i]->friendshipTime);
-            printf("-----------------------------------------\n");
+            printf("------------------------------------------------------------\n");
         }
     }
     //범위에 벗어난 일자를 입력할 경우 -> 나가기
@@ -254,12 +254,12 @@ void showDailyData(daily *d[], int count) {
     }
     else {
             searchNum = searchNum-1;
-            printf("\n%d 일차 갓생점수: %d\n", searchNum+1, d[searchNum]->godchecker);
-            printf("-----------------------------------------\n");
+            printf("\n%d 일차 할당시간(분)\n", searchNum+1);
+            printf("------------------------------------------------------------\n");
             printf(" 운동   전공공부  기타공부      수면   식사횟수  독서   사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 
             d[searchNum]->sleepTime, d[searchNum]->mealCount, d[searchNum]->readingTime, d[searchNum]->friendshipTime);
-            printf("-----------------------------------------\n\n");
+            printf("------------------------------------------------------------\n\n");
     }
 }
 //평가 데이터 업데이트 함수

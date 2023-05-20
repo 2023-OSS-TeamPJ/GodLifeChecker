@@ -15,10 +15,8 @@ int main(void) {
     daily *myDaily[28];
 
     //파일로드
-    count = loadData(myStandard, myDaily);
+    count = loadData(myStandard, myDaily, &standardExist);
     //저장된 데이터가 존재할 경우, 기준 데이터 존재도 확인
-    if (count > 0) standardExist = 1;
-
 
     while(1) {
 
@@ -45,18 +43,22 @@ int main(void) {
             updateDailyData(myDaily, count);
         }
         else if (menuNum == 5 && standardExist != 0) {
+            refreshEvalutation(myStandard, myDaily, count); //평가 데이터 새로고침
             //일일 데이터 출력
             showDailyData(myDaily, count);
         }
         else if (menuNum == 6 && standardExist != 0) {
+            refreshEvalutation(myStandard, myDaily, count); //평가 데이터 새로고침
             //일별 갓생 평가
             conformDaily(myStandard, myDaily, count);
         }
         else if (menuNum == 7 && standardExist != 0) {
+            refreshEvalutation(myStandard, myDaily, count); //평가 데이터 새로고침
             //주별 갓생 평가
             calculatorWeek(myDaily, count);
         }
         else if (menuNum == 8) {
+            refreshEvalutation(myStandard, myDaily, count); //평가 데이터 새로고침
             //데이터 저장
             saveData(myStandard, myDaily, count);
         }
@@ -66,7 +68,7 @@ int main(void) {
         }
         else if (standardExist == 0) { 
             //기준 데이터가 없을 경우
-            printf("기준을 먼저 입력해주세요\n");
+            printf("\n기준을 먼저 입력해주세요\n");
         }
         else {
             //잘못된 입력을 받았을 경우

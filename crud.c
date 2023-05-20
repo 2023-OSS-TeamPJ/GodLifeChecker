@@ -55,7 +55,7 @@ void saveData(standard *s, daily *d[], int count){
 
 }
 
-int loadData(standard *s, daily *d[]){
+int loadData(standard *s, daily *d[], int *standardExist){
     int i = 0 ;
     FILE *fp;
     fp = fopen("standardText.txt", "rt");
@@ -72,6 +72,7 @@ int loadData(standard *s, daily *d[]){
         fscanf(fp,"%d",&s->mealCount);
         fscanf(fp,"%d",&s->readingTime);
         fscanf(fp,"%d",&s->friendshipTime);
+        *standardExist = 1; //기준 존재여부
     }
     fclose(fp);
     fp = fopen("DailyData.txt", "rt");
@@ -99,7 +100,6 @@ int calculatorDaily(standard *s, daily *d){
 
     double sum=0.0;
 
-    printf("%d\n", s->exerciseTime);
     evaluate[0]=(d->exerciseTime*100/s->exerciseTime);
     printf("\n운동은 %d%% 달성 하였습니다.\n", evaluate[0]);
     evaluate[1]=(d->majorStudy*100/s->majorStudy);
@@ -127,13 +127,13 @@ int calculatorDaily(standard *s, daily *d){
         if(average>=120){
             return 5;
         }
-        if((average<120)&&(average>=100)){
+        else if((average<120)&&(average>=100)){
             return 4;
         }
-        if((average<100)&&(average>=80)){
+        else if((average<100)&&(average>=80)){
             return 3;
         }
-        if(80>average){
+        else{
             return 2;
         }
     }else{
@@ -166,6 +166,13 @@ void addDailyData(standard *s, daily *d[], int count) {
 
 int deleteDailyData(daily *d[], int count) {
     int choice;
+
+    //데이터가 없으면
+    if (count == 0) {
+        printf("\n현재 존재하는 데이터가 없습니다.\n");
+        return 0;
+    }
+
     printf("정말로 삭제하시겠습니까?(삭제: 1)");
     scanf("%d", &choice);
     if (choice != 1) return 0;
@@ -179,6 +186,13 @@ int deleteDailyData(daily *d[], int count) {
 
 void updateDailyData(daily *d[], int count) {
     int updateNum; //수정일자
+
+    //데이터가 없으면
+    if (count == 0) {
+        printf("\n현재 존재하는 데이터가 없습니다.\n");
+        return;
+    }
+
     printf("\n몇 번째 하루를 수정하고 싶으신가요? (취소: 0) ");
     scanf("%d", &updateNum);
     //취소할 경우 -> 나가기
@@ -214,17 +228,24 @@ void updateDailyData(daily *d[], int count) {
 
 void showDailyData(daily *d[], int count) {
     int searchNum; //출력하고 싶은 일자
+
+    //데이터가 없으면
+    if (count == 0) {
+        printf("\n현재 존재하는 데이터가 없습니다.\n");
+        return;
+    }
+
     printf("\n몇 번째 하루를 보고 싶으신가요? (전체보기: 0) ");
     scanf("%d", &searchNum);
     //취소할 경우 -> 나가기
     if (searchNum== 0) {
         for(int i=0; i<count; i++) {
-            printf("%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
+            printf("\n%d 일차 갓생점수: %d\n", i+1, d[i]->godchecker);
             printf("-----------------------------------------\n");
-            printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
+            printf("운동    전공공부  기타공부      수면  식사횟수  독서  사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[i]->exerciseTime, d[i]->majorStudy, d[i]->otherStudy, 
             d[i]->sleepTime, d[i]->mealCount, d[i]->readingTime, d[i]->friendshipTime);
-            printf("-----------------------------------------\n\n");
+            printf("-----------------------------------------\n");
         }
     }
     //범위에 벗어난 일자를 입력할 경우 -> 나가기
@@ -233,12 +254,59 @@ void showDailyData(daily *d[], int count) {
     }
     else {
             searchNum = searchNum-1;
-            printf("%d 일차 갓생점수: %d\n", searchNum+1, d[searchNum]->godchecker);
+            printf("\n%d 일차 갓생점수: %d\n", searchNum+1, d[searchNum]->godchecker);
             printf("-----------------------------------------\n");
-            printf("운동   전공공부  기타공부  수면  식사횟수  독서  사교\n");
+            printf("운동    전공공부  기타공부      수면  식사횟수  독서  사교\n");
             printf("  %d       %d        %d         %d        %d      %d     %d\n", d[searchNum]->exerciseTime, d[searchNum]->majorStudy, d[searchNum]->otherStudy, 
             d[searchNum]->sleepTime, d[searchNum]->mealCount, d[searchNum]->readingTime, d[searchNum]->friendshipTime);
             printf("-----------------------------------------\n\n");
     }
+}
+//평가 데이터 업데이트 함수
+void refreshEvalutation(standard *s, daily *d[], int count) {
+        int evaluate[7];
+        int error;
+        double average = 0.0;
+        double sum = 0.0;
+        //전체 데이터 계산
+        for (int i=0; i<count; i++){
+            error = 0; //error 초기화
+            evaluate[0]=(d[i]->exerciseTime*100/s->exerciseTime);
+            evaluate[1]=(d[i]->majorStudy*100/s->majorStudy);
+            evaluate[2]=(d[i]->otherStudy*100/s->otherStudy);
+            evaluate[3]=(d[i]->sleepTime*100/s->sleepTime);
+            evaluate[4]=(d[i]->readingTime*100/s->readingTime);
+            evaluate[5]=(d[i]->mealCount*100/s->mealCount);
+            evaluate[6]=(d[i]->friendshipTime*100/s->friendshipTime);
 
+            for(int i = 0 ; i < 7 ; i ++){
+                if(evaluate[i]<50) {
+                    error=1;
+                    break;
+                }
+                sum+=evaluate[i];
+            }
+
+            
+            average = sum/7;
+            //godchecker 업데이트
+            if(error==0){
+                if(average>=120){
+                    d[i]->godchecker = 5;
+                }
+                else if((average<120)&&(average>=100)){
+                    d[i]->godchecker = 4;
+                }
+                else if((average<100)&&(average>=80)){
+                    d[i]->godchecker = 3;
+                }
+                else if(80>average){
+                    d[i]->godchecker = 2;
+                }
+            }
+            else{
+                d[i]->godchecker = 0;
+            }
+        } 
+        
 }
